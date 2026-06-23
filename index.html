@@ -1,59 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Time is Gold static site">
-    <title>Time is Gold</title>
-    <style>
-      :root {
-        color-scheme: light;
-        --color-page: #f8f5ef;
-        --color-text: #1f2933;
-        --font-sans: Arial, Helvetica, sans-serif;
-        --text-title: clamp(2.25rem, 8vw, 5rem);
-        --text-body: 1.125rem;
-        --leading-title: 0.95;
-        --leading-body: 1.6;
-        --space-page-inline: 16px;
-        --space-title-gap: 12px;
-        --content-max: 680px;
-        --copy-max: 34rem;
-        font-family: var(--font-sans);
-        background: var(--color-page);
-        color: var(--color-text);
-      }
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>지자체 공사 알림</title>
+<!-- Leaflet: Kakao 키가 없을 때의 폴백 지도용 -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root {
+    --blue:#1565c0; --red:#d32f2f; --amber:#f9a825; --green:#2e7d32; --ink:#1a1a1a;
+    --fs:1; --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; height:100%; font-family:"Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; color:var(--ink); -webkit-text-size-adjust:100%; }
+  #map { position:absolute; inset:0; z-index:0; background:#e9eef2; }
+  button { font-family:inherit; }
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-      }
+  #topbar {
+    position:absolute; top:0; left:0; right:0; z-index:1000;
+    display:flex; align-items:center; gap:8px 10px; flex-wrap:wrap;
+    padding:8px 12px; padding-top:max(8px, env(safe-area-inset-top));
+    background:rgba(255,255,255,.95); box-shadow:0 1px 6px rgba(0,0,0,.15); font-size:calc(13px*var(--fs));
+  }
+  #topbar .title { font-weight:800; font-size:calc(15px*var(--fs)); color:var(--blue); }
+  #topbar .sep { color:#ccc; }
+  #topbar .badge { padding:2px 8px; border-radius:10px; background:#eef3fb; color:var(--blue); font-weight:700; white-space:nowrap; }
+  #topbar .badge.warn { background:#fff4e5; color:#b26a00; }
+  #topbar .badge.ok { background:#e8f5e9; color:var(--green); }
+  #clock { font-variant-numeric:tabular-nums; }
 
-      main {
-        width: min(var(--content-max), calc(100% - (var(--space-page-inline) * 2)));
-      }
+  #controls {
+    position:absolute; left:12px; bottom:calc(12px + var(--safe-b)); z-index:1000;
+    display:flex; flex-direction:column; gap:8px;
+    background:rgba(255,255,255,.96); padding:12px; border-radius:14px;
+    box-shadow:0 2px 12px rgba(0,0,0,.22); font-size:calc(13px*var(--fs)); width:300px; max-width:calc(100vw - 24px);
+  }
+  #controls .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  #controls .grp { border-top:1px solid #eee; padding-top:8px; }
+  #controls .grp-title { font-weight:700; color:#555; margin-bottom:6px; font-size:calc(12px*var(--fs)); }
+  button.btn { border:0; border-radius:10px; padding:10px 12px; font-weight:700; cursor:pointer; background:var(--blue); color:#fff; font-size:calc(13px*var(--fs)); min-height:44px; flex:1 1 auto; }
+  button.btn.secondary { background:#eceff1; color:#263238; }
+  button.btn.on { background:var(--green); }
+  button.btn:active { transform:translateY(1px); }
+  button.fsbtn { background:#eceff1; color:#263238; min-width:52px; min-height:44px; border-radius:10px; border:0; font-weight:800; cursor:pointer; }
+  #fsLabel { min-width:64px; text-align:center; font-weight:800; font-variant-numeric:tabular-nums; }
+  #controls label.chk { display:flex; align-items:center; gap:8px; cursor:pointer; user-select:none; min-height:34px; }
+  #controls label.chk input { width:20px; height:20px; }
+  #controls label.chk.disabled { opacity:.45; }
+  #controls .speed { display:flex; align-items:center; gap:8px; }
+  #controls input[type=range]{ flex:1; height:28px; }
+  .legend { display:flex; flex-wrap:wrap; gap:4px 12px; }
+  .legend span{ display:inline-flex; align-items:center; gap:5px; }
+  .dot{ width:11px; height:11px; border-radius:50%; display:inline-block; }
 
-      h1 {
-        margin: 0 0 var(--space-title-gap);
-        font-size: var(--text-title);
-        line-height: var(--leading-title);
-        letter-spacing: 0;
-      }
+  #toasts { position:absolute; top:calc(54px + env(safe-area-inset-top)); right:12px; z-index:1100; display:flex; flex-direction:column; gap:8px; width:min(380px,calc(100vw - 24px)); }
+  .toast { background:#fff; border-left:7px solid var(--red); border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,.28); padding:13px 13px 13px 15px; animation:slidein .2s ease-out; }
+  @keyframes slidein { from{transform:translateY(-12px);opacity:0;} to{transform:none;opacity:1;} }
+  .toast .head { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+  .toast .tag { font-size:calc(12px*var(--fs)); font-weight:800; color:#fff; background:var(--red); padding:3px 9px; border-radius:9px; }
+  .toast .tag.amber{ background:var(--amber); color:#3a2e00; }
+  .toast .x { cursor:pointer; color:#888; font-weight:800; border:0; background:none; font-size:calc(22px*var(--fs)); line-height:1; padding:0 4px; min-width:36px; min-height:36px; }
+  .toast h3 { margin:7px 0 2px; font-size:calc(16px*var(--fs)); }
+  .toast .dates { font-size:calc(16px*var(--fs)); font-weight:800; color:var(--red); margin:5px 0; }
+  .toast .meta { font-size:calc(13px*var(--fs)); color:#444; line-height:1.6; }
+  .toast a { color:var(--blue); }
 
-      p {
-        margin: 0;
-        max-width: var(--copy-max);
-        font-size: var(--text-body);
-        line-height: var(--leading-body);
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Time is Gold</h1>
-      <p>GitHub and Vercel are ready to be connected for deployment.</p>
-    </main>
-  </body>
+  #panel { position:absolute; right:12px; bottom:calc(12px + var(--safe-b)); z-index:999; width:min(330px,calc(100vw - 24px)); max-height:44vh; overflow:auto; background:rgba(255,255,255,.97); border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,.22); padding:10px 12px; font-size:calc(12px*var(--fs)); }
+  #panelHead { margin:0 0 8px; font-size:calc(14px*var(--fs)); display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+  #panelHead .tg { transition:transform .15s; }
+  #panel.collapsed { max-height:none; overflow:visible; }
+  #panel.collapsed #list { display:none; }
+  #panel.collapsed #panelHead { margin:0; }
+  #panel.collapsed #panelHead .tg { transform:rotate(-90deg); }
+  .item { border-top:1px solid #eee; padding:8px 0; }
+  .item:first-of-type{ border-top:0; }
+  .item .name { font-weight:700; }
+  .item .d { color:var(--red); font-weight:700; }
+  .pill { display:inline-block; font-size:calc(10px*var(--fs)); padding:1px 7px; border-radius:8px; background:#eee; color:#555; margin-left:4px; }
+  .pill.active{ background:#e8f5e9; color:var(--green); }
+  .pill.soon{ background:#fff4e5; color:#b26a00; }
+
+  .arrow-wrap { width:40px; height:40px; display:flex; align-items:center; justify-content:center; }
+  .arrow-inner { font-size:32px; line-height:1; color:var(--blue); text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 7px #fff; transition:transform .12s linear; transform-origin:50% 50%; }
+  .leaflet-popup-content { font-size:calc(13px*var(--fs)); }
+
+  .empty-warn{ position:absolute; inset:0; z-index:1200; display:none; align-items:center; justify-content:center; background:rgba(255,255,255,.92); text-align:center; padding:20px; }
+
+  @media (max-width:720px) {
+    #topbar { gap:4px 8px; padding:7px 10px; }
+    #topbar .sep { display:none; }
+    #controls { left:8px; right:8px; bottom:calc(8px + var(--safe-b)); width:auto; max-width:none; padding:10px; max-height:62vh; overflow:auto; }
+    #panel { left:8px; right:8px; bottom:auto; top:calc(50px + env(safe-area-inset-top)); width:auto; max-height:36vh; }
+    .toast h3, .toast .dates { font-size:calc(17px*var(--fs)); }
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<div id="topbar">
+  <span class="title">🚧 공사 알림</span>
+  <span class="sep">|</span>
+  <span id="clock"></span>
+  <span class="sep">|</span>
+  <span>데이터 <span id="srcBadge" class="badge">…</span></span>
+  <span>지도 <span id="mapBadge" class="badge">…</span></span>
+  <span>진행중 <span id="activeCount" class="badge">0</span></span>
+  <span id="tgBadge" class="badge ok" style="display:none">✈ 텔레그램</span>
+  <span id="modeBadge" class="badge warn" style="display:none">실제 GPS</span>
+</div>
+
+<div id="toasts" role="region" aria-live="assertive" aria-label="공사 진입 알림"></div>
+
+<div id="controls">
+  <div class="row">
+    <button id="btnSim" class="btn">▶ 시뮬 주행</button>
+    <button id="btnReset" class="btn secondary">⟲ 처음</button>
+    <button id="btnGps" class="btn secondary">📍 GPS</button>
+  </div>
+
+  <div class="grp">
+    <div class="grp-title">🔠 글자 크기 (저시력자)</div>
+    <div class="row" role="group" aria-label="글자 크기 조절">
+      <button id="fsDown" class="fsbtn" aria-label="글자 작게">가－</button>
+      <span id="fsLabel" aria-live="polite">100%</span>
+      <button id="fsUp" class="fsbtn" aria-label="글자 크게">가＋</button>
+      <button id="fsReset" class="fsbtn" aria-label="글자 크기 기본값" title="기본">↺</button>
+    </div>
+  </div>
+
+  <div class="grp">
+    <div class="speed">속도 <input id="speed" type="range" min="1" max="20" value="6" aria-label="시뮬 주행 속도"><span id="speedVal">6</span></div>
+    <label class="chk"><input type="checkbox" id="follow" checked> 화살표 따라가기</label>
+    <label class="chk"><input type="checkbox" id="ignoreDates" checked> 데모: 모든 공사 활성 취급</label>
+    <label class="chk"><input type="checkbox" id="sound"> 알림 효과음</label>
+    <label class="chk"><input type="checkbox" id="tts" checked> 🔊 음성 안내 (TTS)</label>
+    <label class="chk" id="appnotifWrap"><input type="checkbox" id="appnotif"> 🔔 시스템 알림 (앱 자체)</label>
+    <label class="chk" id="telegramWrap"><input type="checkbox" id="telegram"> ✈ 텔레그램 푸시</label>
+  </div>
+
+  <div class="grp">
+    <div class="grp-title">🧪 데모 시연 — 화살표 이동</div>
+    <label class="chk"><input type="checkbox" id="tapMove"> 🎯 지도를 탭하면 화살표 이동</label>
+    <div style="color:#777; font-size:calc(11px*var(--fs)); line-height:1.5">
+      화살표를 직접 <b>드래그(모바일은 손가락 터치)</b>해서 옮길 수 있습니다.
+      공사 알림범위에 들어가면 알림이 울립니다.
+    </div>
+  </div>
+
+  <div class="grp legend">
+    <span><span class="dot" style="background:#d32f2f"></span>진행중</span>
+    <span><span class="dot" style="background:#f9a825"></span>예정</span>
+    <span><span class="dot" style="background:#90a4ae"></span>알림범위</span>
+  </div>
+</div>
+
+<div id="panel">
+  <h4 id="panelHead" role="button" tabindex="0" aria-expanded="true">📋 공사 목록 / 최근 알림 <span class="tg">▾</span></h4>
+  <div id="list"></div>
+</div>
+
+<div class="empty-warn" id="emptyWarn">
+  <div>
+    <h2>표시할 공사 데이터가 없습니다</h2>
+    <p><code>construction_events.js</code>의 <code>window.CONSTRUCTION_EVENTS</code> 배열을<br>
+    크롤러 출력으로 채워주세요. (스키마는 README 참고)</p>
+  </div>
+</div>
+
+<!-- 폴백 지도(Leaflet) -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- 크롤러가 생성하는 데이터 -->
+<script src="construction_events.js"></script>
+<!-- 앱 로직 (Kakao SDK는 app.js가 /api/config 키로 동적 로드) -->
+<script src="app.js"></script>
+</body>
 </html>

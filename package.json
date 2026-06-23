@@ -1,8 +1,11 @@
 {
-  "name": "time_is_gold__",
+  "name": "roadwork-alert",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.1.0",
+  "description": "지자체 소규모 공사/도로통제 사전·근접 알림 앱 (Kakao Map + Telegram + TTS)",
   "scripts": {
-    "build": "echo \"Static site ready\""
-  }
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "engines": { "node": ">=18" }
 }

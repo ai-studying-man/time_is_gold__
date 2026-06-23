@@ -1,5 +1,9 @@
+node_modules/
 .vercel
-node_modules
-dist
-qa
+.env
+.env.local
+.env.*.local
+config.local.js
+*.log
 .DS_Store
+Thumbs.db

@@ -1,0 +1,1470 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서울 25개 자치구 통행정보 (균형수집·상세보강)</title><style>
+:root{--bg:#f4f6f9;--card:#fff;--line:#e3e8ef;--ink:#1f2937;--mut:#6b7280;}*{box-sizing:border-box;}
+body{margin:0;font-family:"Malgun Gothic","Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);}
+header{background:linear-gradient(135deg,#0f172a,#1f3a5f);color:#fff;padding:26px 30px 22px;}
+header h1{margin:0 0 6px;font-size:23px;}header p{margin:3px 0;color:#cbd5e1;font-size:13px;}
+.wrap{padding:20px 30px 44px;}.pills{display:flex;gap:12px;flex-wrap:wrap;margin:-40px 0 14px;}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:112px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.pill b{display:block;font-size:24px;}.pill span{font-size:12px;color:var(--mut);}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 14px;}
+#q{flex:1;min-width:200px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;}
+select{padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;}
+.fbtn{border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 13px;font-size:13px;cursor:pointer;color:#374151;}
+.fbtn em{font-style:normal;color:#9ca3af;}.fbtn.on{background:#0f172a;color:#fff;border-color:#0f172a;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+th,td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px;line-height:1.5;}
+th{position:sticky;top:0;background:#eef2f7;color:#374151;font-size:12px;z-index:2;}tr:hover td{background:#f8fafc;}
+.idx{color:#9ca3af;text-align:right;width:34px;}.region{font-weight:700;min-width:104px;}
+.cat{display:inline-block;padding:3px 8px;border-radius:6px;background:var(--c);color:#fff;font-size:12px;white-space:nowrap;}
+.badge{margin-top:5px;font-size:11px;font-weight:700;}.imp-high{color:#b91c1c;}.imp-mid{color:#b45309;}.imp-low{color:#6b7280;}
+.loc{min-width:110px;}.period{font-weight:700;color:#0f5132;min-width:96px;}.title{min-width:320px;}
+.gov{color:#1d4ed8;font-size:11px;margin-top:3px;}.ctrl{color:#b91c1c;font-size:11px;margin-top:2px;font-weight:600;}.who{color:#94a3b8;font-size:11px;margin-top:2px;}
+.src a{color:#1d4ed8;text-decoration:none;font-weight:600;}.empty{text-align:center;padding:30px;color:#9ca3af;}
+.note{margin-top:14px;font-size:12px;color:#94a3b8;}@media(max-width:880px){.wrap{padding:12px}table{display:block;overflow-x:auto}}
+</style></head><body>
+<header><h1>🚦 서울 25개 자치구 통행·보행 정보 (균형수집 + 상세보강)</h1>
+<p>정보소통광장 원문공개를 자치구별 균형 수집(①)하고, 상위 통행영향 문서는 상세 페이지에서 서울시 공식분류·담당자·문서번호·기간/통제를 보강(②)했습니다.</p>
+<p>생성: 2026-06-23 13:12 · 첨부 원문은 다운로드 제한으로 미수집 → 상세 통제구간/기간은 원문 확인</p></header>
+<div class="wrap"><div class="pills"><div class="pill"><b>238</b><span>총 문서</span></div><div class="pill"><b>208</b><span>자치구 문서</span></div><div class="pill"><b>190</b><span>통행영향 후보</span></div><div class="pill"><b>70</b><span>상세보강 완료</span></div></div>
+<div class="tools"><input id="q" placeholder="🔎 자치구·도로·제목 검색…">
+<select id="reg"><option value="all">자치구 전체</option><option value="서울시 본청/사업소">서울시 본청/사업소 (30)</option><option value="서울특별시 강남구">서울특별시 강남구 (6)</option><option value="서울특별시 강동구">서울특별시 강동구 (8)</option><option value="서울특별시 강북구">서울특별시 강북구 (10)</option><option value="서울특별시 강서구">서울특별시 강서구 (10)</option><option value="서울특별시 관악구">서울특별시 관악구 (10)</option><option value="서울특별시 광진구">서울특별시 광진구 (6)</option><option value="서울특별시 구로구">서울특별시 구로구 (5)</option><option value="서울특별시 금천구">서울특별시 금천구 (10)</option><option value="서울특별시 노원구">서울특별시 노원구 (7)</option><option value="서울특별시 도봉구">서울특별시 도봉구 (7)</option><option value="서울특별시 동대문구">서울특별시 동대문구 (10)</option><option value="서울특별시 동작구">서울특별시 동작구 (5)</option><option value="서울특별시 마포구">서울특별시 마포구 (10)</option><option value="서울특별시 서대문구">서울특별시 서대문구 (10)</option><option value="서울특별시 서초구">서울특별시 서초구 (8)</option><option value="서울특별시 성동구">서울특별시 성동구 (6)</option><option value="서울특별시 성북구">서울특별시 성북구 (10)</option><option value="서울특별시 송파구">서울특별시 송파구 (10)</option><option value="서울특별시 양천구">서울특별시 양천구 (10)</option><option value="서울특별시 영등포구">서울특별시 영등포구 (10)</option><option value="서울특별시 용산구">서울특별시 용산구 (9)</option><option value="서울특별시 은평구">서울특별시 은평구 (10)</option><option value="서울특별시 종로구">서울특별시 종로구 (10)</option><option value="서울특별시 중구">서울특별시 중구 (6)</option><option value="서울특별시 중랑구">서울특별시 중랑구 (5)</option></select><button class="fbtn on" data-f="all">전체</button><button class="fbtn" data-f="impact">통행영향만</button><button class="fbtn" data-f="cat:water" style="--c:#1d4ed8">상수도/하수도/단수 <em>140</em></button><button class="fbtn" data-f="cat:road" style="--c:#b91c1c">도로공사/굴착/포장/보수 <em>40</em></button><button class="fbtn" data-f="cat:etc" style="--c:#6b7280">기타 <em>27</em></button><button class="fbtn" data-f="cat:maintenance" style="--c:#15803d">예초/제초/가로수/방제/제설 <em>24</em></button><button class="fbtn" data-f="cat:occupy" style="--c:#c2410c">도로점용/적치/사다리차/노점 <em>6</em></button><button class="fbtn" data-f="cat:event" style="--c:#7c3aed">축제/행사/장날/집회 <em>1</em></button></div>
+<table id="tbl"><thead><tr><th class="idx">#</th><th>자치구/기관</th><th>분류/영향</th><th>도로·구간</th><th>기간</th><th>제목 · 공식분류 · 통제 · 담당</th><th>원문</th></tr></thead>
+<tbody><tr data-cat="etc" data-impact="1" data-region="서울특별시 종로구" data-search="서울특별시 종로구 종로구 문화환경국 관광체육과 시간선택제임기제 라급(전세버스 통행제한 단속) 면접심사결과 및 채용예정자 결정 보고 — 문화관광 &gt;  관광정책  &gt;  관광정책수행  &gt;  관광정책  &gt;  관광정책">
+  <td class="idx">1</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-03-09</td>
+  <td class="title">시간선택제임기제 라급(전세버스 통행제한 단속) 면접심사결과 및 채용예정자 결정 보고<div class="gov">공식분류: 문화관광 &gt;  관광정책  &gt;  관광정책수행  &gt;  관광정책  &gt;  관광정책</div><div class="ctrl">통제: 통행제한 단속) 면접심사결과 및 채용예정자 결정 보고 문화관광 &gt; 관광정책 &gt; 관광정책수행</div><div class="who">담당: 좌미주 (02-2148-1854) · 관광체육과-13684</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35606207" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="1" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 건설안전국 도로과 - 청량리 고가도로 차도 구간 보행자 차도 통행 제한을 위한 - 교통전문가 합동 점검 계획 — 교통 &gt;  도로관리  &gt;  도로유지정비  &gt;  도로유지및보수업무  &gt;  도로시설물유지보수">
+  <td class="idx">2</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-03-11</td>
+  <td class="title">- 청량리 고가도로 차도 구간 보행자 차도 통행 제한을 위한 - 교통전문가 합동 점검 계획<div class="gov">공식분류: 교통 &gt;  도로관리  &gt;  도로유지정비  &gt;  도로유지및보수업무  &gt;  도로시설물유지보수</div><div class="ctrl">통제: 통행 제한을 위한 - 교통전문가 합동 점검 계획 교통 &gt; 도로관리 &gt; 도로유지정비 &gt; 도로</div><div class="who">담당: 이호익 (02-2127-4821) · 도로과-4144</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35626248" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="occupy" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 도시기반시설본부 시설국 토목부 업무지시전[도로점용(굴착) 허가 알림(송파구-기타2)] — 교통 &gt;  도로시설물관리  &gt;  도로시설물유지보수  &gt;  도로토목공사관리  &gt;  도로개설및확장공사관리">
+  <td class="idx">3</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#c2410c">도로점용/적치/사다리차/노점</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-03-11</td>
+  <td class="title">업무지시전[도로점용(굴착) 허가 알림(송파구-기타2)]<div class="gov">공식분류: 교통 &gt;  도로시설물관리  &gt;  도로시설물유지보수  &gt;  도로토목공사관리  &gt;  도로개설및확장공사관리</div><div class="who">담당: 서민수 (02-6438-2146) · 토목부-4660</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35623762" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="1" data-region="서울특별시 종로구" data-search="서울특별시 종로구 종로구 문화환경국 관광체육과 전세버스 통행제한 처분 취소 소송현장검증 주요 내용 및 대응 계획 — 문화관광 &gt;  관광정책  &gt;  관광정책수행  &gt;  관광정책  &gt;  관광정책">
+  <td class="idx">4</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-05-22</td>
+  <td class="title">전세버스 통행제한 처분 취소 소송현장검증 주요 내용 및 대응 계획<div class="gov">공식분류: 문화관광 &gt;  관광정책  &gt;  관광정책수행  &gt;  관광정책  &gt;  관광정책</div><div class="ctrl">통제: 통행제한 처분 취소 소송현장검증 주요 내용 및 대응 계획 문화관광 &gt; 관광정책 &gt; 관광정책수</div><div class="who">담당: 최예진 (02-2148-1853) · 관광체육과-26998</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36157633" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="1" data-region="서울특별시 종로구" data-search="서울특별시 종로구 종로구 문화환경국 관광체육과 전세버스 통행제한 처분 취소 소송 현장검증 결과 보고 — 문화관광 &gt;  관광정책  &gt;  관광정책수행  &gt;  관광정책  &gt;  관광정책">
+  <td class="idx">5</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-11</td>
+  <td class="title">전세버스 통행제한 처분 취소 소송 현장검증 결과 보고<div class="gov">공식분류: 문화관광 &gt;  관광정책  &gt;  관광정책수행  &gt;  관광정책  &gt;  관광정책</div><div class="ctrl">통제: 통행제한 처분 취소 소송 현장검증 결과 보고 문화관광 &gt; 관광정책 &gt; 관광정책수행 &gt; 관</div><div class="who">담당: 최예진 (02-2148-1853) · 관광체육과-29456</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36291313" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="occupy" data-impact="1" data-region="서울특별시 광진구" data-search="서울특별시 광진구 광진구 교통건설국 도로 과 도로점용(굴착,복구) 허가 승인 알림(2026-통신-0009) — 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착복구허가  &gt;  도로굴착복구허가및취소">
+  <td class="idx">6</td><td class="region">서울특별시 광진구</td>
+  <td><span class="cat" style="--c:#c2410c">도로점용/적치/사다리차/노점</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-12</td>
+  <td class="title">도로점용(굴착,복구) 허가 승인 알림(2026-통신-0009)<div class="gov">공식분류: 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착복구허가  &gt;  도로굴착복구허가및취소</div><div class="who">담당: 이초록 (02-450-7866) · 도로과-10395</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36300085" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="occupy" data-impact="1" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 건설안전국 도로 과 도로점용(굴착·복구) 허가사항 통보(2026-상수-094) — 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착허가  &gt;  도로점용굴착허가">
+  <td class="idx">7</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#c2410c">도로점용/적치/사다리차/노점</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-12</td>
+  <td class="title">도로점용(굴착·복구) 허가사항 통보(2026-상수-094)<div class="gov">공식분류: 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착허가  &gt;  도로점용굴착허가</div><div class="who">담당: 김소현 (2127-4827) · 도로과-10241</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36299890" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="occupy" data-impact="1" data-region="서울특별시 용산구" data-search="서울특별시 용산구 용산구 안전건설교통국 교통행정과 2026년 제3차 도로점용공사장 교통소통대책 자문회의(서면) 개최 계획 — 교통 &gt;  교통관리  &gt;  교통기획관리  &gt;  도로점용공사장교통소통대책  &gt;  도로공사장교통소통대책검토">
+  <td class="idx">8</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#c2410c">도로점용/적치/사다리차/노점</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-15</td>
+  <td class="title">2026년 제3차 도로점용공사장 교통소통대책 자문회의(서면) 개최 계획<div class="gov">공식분류: 교통 &gt;  교통관리  &gt;  교통기획관리  &gt;  도로점용공사장교통소통대책  &gt;  도로공사장교통소통대책검토</div><div class="who">담당: 박현아 (02-2199-7753) · 교통행정과-65504</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36311599" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="occupy" data-impact="1" data-region="서울특별시 중랑구" data-search="서울특별시 중랑구 중랑구 안전건설교통국 도로 과 도로점용(굴착·복구)허가 승인 통보(상수-57) — 교통 &gt;  도로건설  &gt;  도로건설행정  &gt;  도로건설일반  &gt;  굴착복구일반">
+  <td class="idx">9</td><td class="region">서울특별시 중랑구</td>
+  <td><span class="cat" style="--c:#c2410c">도로점용/적치/사다리차/노점</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-15</td>
+  <td class="title">도로점용(굴착·복구)허가 승인 통보(상수-57)<div class="gov">공식분류: 교통 &gt;  도로건설  &gt;  도로건설행정  &gt;  도로건설일반  &gt;  굴착복구일반</div><div class="who">담당: 정규민 (02-2094-2713) · 도로과-11155</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36311718" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="occupy" data-impact="1" data-region="서울특별시 용산구" data-search="서울특별시 용산구 용산구 안전건설교통국 교통행정과 2026년 제3차 도로점용공사장 교통소통대책 자문회의(서면) 개최 — 교통 &gt;  교통관리  &gt;  교통기획관리  &gt;  도로점용공사장교통소통대책  &gt;  도로공사장교통소통대책검토">
+  <td class="idx">10</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#c2410c">도로점용/적치/사다리차/노점</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">2026년 제3차 도로점용공사장 교통소통대책 자문회의(서면) 개최<div class="gov">공식분류: 교통 &gt;  교통관리  &gt;  교통기획관리  &gt;  도로점용공사장교통소통대책  &gt;  도로공사장교통소통대책검토</div><div class="who">담당: 박현아 (02-2199-7753) · 교통행정과-66229</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36321651" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 도봉구" data-search="서울특별시 도봉구 서울아리수본부 북부수도사업소 시설관리과 도로굴착 복구비(정산분) 납부(전식방지공사-도봉구) — 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  가압시설관리  &gt;  배수지가압장기전설비관리">
+  <td class="idx">11</td><td class="region">서울특별시 도봉구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-05-14</td>
+  <td class="title">도로굴착 복구비(정산분) 납부(전식방지공사-도봉구)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  가압시설관리  &gt;  배수지가압장기전설비관리</div><div class="who">담당: 이범환 (02-3146-3418) · 시설관리과-7558</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/33463067" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 도봉구" data-search="서울특별시 도봉구 서울아리수본부 북부수도사업소 시설관리과 일반지출결의서_도로굴착 복구비(정산분) 납부(전식방지공사-도봉구)-이범환 — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">12</td><td class="region">서울특별시 도봉구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-05-15</td>
+  <td class="title">일반지출결의서_도로굴착 복구비(정산분) 납부(전식방지공사-도봉구)-이범환<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 이범환 (02-3146-3418) · 시설관리과-7664</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/33478435" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 도봉구" data-search="서울특별시 도봉구 도로사업소 북부도로사업소 도로보수과 2025년 하반기 도로굴착사업계획 조정관련 도로포장 완료 및 계획 알림(도봉구) 북부도로 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리">
+  <td class="idx">13</td><td class="region">서울특별시 도봉구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">북부도로</td><td class="period">2025-06-16</td>
+  <td class="title">2025년 하반기 도로굴착사업계획 조정관련 도로포장 완료 및 계획 알림(도봉구)<div class="gov">공식분류: 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리</div><div class="who">담당: 박보성 (02-944-5435) · 도로보수과-7015</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/33681722" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 도봉구" data-search="서울특별시 도봉구 서울아리수본부 북부수도사업소 시설관리과 긴급누수복구공사 도로굴착 조정 의뢰(도봉구) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  도로굴착및복구">
+  <td class="idx">14</td><td class="region">서울특별시 도봉구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2024-11-01 ~ 2024-09-30</td>
+  <td class="title">긴급누수복구공사 도로굴착 조정 의뢰(도봉구)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  도로굴착및복구</div><div class="who">담당: 주세진 (02-3146-3403) · 시설관리과-16499</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/34578442" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성동구" data-search="서울특별시 성동구 서울아리수본부 동부수도사업소 시설관리과 도로굴착복구비 납부(성동구) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  누수관리  &gt;  누수복구공사관리">
+  <td class="idx">15</td><td class="region">서울특별시 성동구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-12-29</td>
+  <td class="title">도로굴착복구비 납부(성동구)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  누수관리  &gt;  누수복구공사관리</div><div class="who">담당: 권예진 (02-3146-2802) · 시설관리과-27670</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35118180" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성동구" data-search="서울특별시 성동구 서울아리수본부 동부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(성동구, 25년 동부수도사업소 관내 긴급누수복구공사)-권예진 — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  누수관리  &gt;  누수복구공사관리">
+  <td class="idx">16</td><td class="region">서울특별시 성동구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-12-30</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(성동구, 25년 동부수도사업소 관내 긴급누수복구공사)-권예진<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  누수관리  &gt;  누수복구공사관리</div><div class="who">담당: 권예진 (02-3146-2802) · 시설관리과-27680</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35142164" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 도봉구" data-search="서울특별시 도봉구 도로사업소 북부도로사업소 도로보수과 2026년 상반기 도로굴착사업계획 조정관련 도로포장 계획 및 완료 구간 알림(도봉구) 북부도로 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리">
+  <td class="idx">17</td><td class="region">서울특별시 도봉구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">북부도로</td><td class="period">2025-12-30</td>
+  <td class="title">2026년 상반기 도로굴착사업계획 조정관련 도로포장 계획 및 완료 구간 알림(도봉구)<div class="gov">공식분류: 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리</div><div class="who">담당: 박보성 (02-944-5435) · 도로보수과-15984</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35129698" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">18</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-12-30</td>
+  <td class="title">일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35126799" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 도시기반시설본부 시설국 방재시설부 2026년 상반기 도로굴착사업계획서 제출(양천구-국회대로 도로 다이어트구간 조성공사) 국회대로 ">
+  <td class="idx">19</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">국회대로</td><td class="period">2026-01-12</td>
+  <td class="title">2026년 상반기 도로굴착사업계획서 제출(양천구-국회대로 도로 다이어트구간 조성공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35218198" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성동구" data-search="서울특별시 성동구 서울아리수본부 동부수도사업소 급수운영과 일반지출결의서_도로굴착 복구비 납부(시설비, 25년 성동구 관내 상수도공사(행당동 147))-한지수 — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">20</td><td class="region">서울특별시 성동구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-01-19</td>
+  <td class="title">일반지출결의서_도로굴착 복구비 납부(시설비, 25년 성동구 관내 상수도공사(행당동 147))-한지수<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 한지수 (02-3146-2752) · 급수운영과-1064</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35263545" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 양천구 기반시설국 도로 과 2025년 도로굴착복구기금 결산 및 성과분석 — ">
+  <td class="idx">21</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-01-29</td>
+  <td class="title">2025년 도로굴착복구기금 결산 및 성과분석</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35355482" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 양천구 기반시설국 도로 과 2025년 도로굴착복구기금 결산 및 성과분석 결과보고 — ">
+  <td class="idx">22</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-01-30</td>
+  <td class="title">2025년 도로굴착복구기금 결산 및 성과분석 결과보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35356699" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 양천구 기반시설국 도로 과 2025년 도로굴착복구기금 결산 및 성과분석 수정보고 — ">
+  <td class="idx">23</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-02-06</td>
+  <td class="title">2025년 도로굴착복구기금 결산 및 성과분석 수정보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35409479" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 양천구 기반시설국 도로 과 2025년 도로굴착복구기금 결산 및 성과분석 결과 수정보고 — ">
+  <td class="idx">24</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-02-09</td>
+  <td class="title">2025년 도로굴착복구기금 결산 및 성과분석 결과 수정보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35435643" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 양천구 기반시설국 도로 과 2026년 도로 굴착복구 공사(연간단가) 시행 — ">
+  <td class="idx">25</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-02-11</td>
+  <td class="title">2026년 도로 굴착복구 공사(연간단가) 시행</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35455234" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">26</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-02-25</td>
+  <td class="title">도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35514125" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 노원구" data-search="서울특별시 노원구 노원 구 안전교통건설국 토목과 노원구 도로굴착복구기금 운용심의위원회 개최(2025년도 도로굴착복구기금 결산보고) — 기타">
+  <td class="idx">27</td><td class="region">서울특별시 노원구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-02-27</td>
+  <td class="title">노원구 도로굴착복구기금 운용심의위원회 개최(2025년도 도로굴착복구기금 결산보고)<div class="gov">공식분류: 기타</div><div class="who">담당: 백승원 · 토목과-3302</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35545881" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 서울아리수본부 강서수도사업소 급수운영과 도로굴착 복구의뢰(양천구 신월동 530- 번지) — ">
+  <td class="idx">28</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-02-27</td>
+  <td class="title">도로굴착 복구의뢰(양천구 신월동 530- 번지)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35536220" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">29</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-03</td>
+  <td class="title">일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35558133" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 도로사업소 남부도로사업소 기전과 도로굴착부담금 환급금 부과(영등포구-2025-기타-0013) 남부도로 ">
+  <td class="idx">30</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">남부도로</td><td class="period">2026-03-04</td>
+  <td class="title">도로굴착부담금 환급금 부과(영등포구-2025-기타-0013)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35564407" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 도로사업소 남부도로사업소 기전과 도로굴착부담금 환급금 부과(영등포구-2025-기타-0010) 남부도로 ">
+  <td class="idx">31</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">남부도로</td><td class="period">2026-03-04</td>
+  <td class="title">도로굴착부담금 환급금 부과(영등포구-2025-기타-0010)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35563763" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 도로사업소 남부도로사업소 기전과 도로굴착부담금 환급금 부과(영등포구-2024-기타-0006) 남부도로 ">
+  <td class="idx">32</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">남부도로</td><td class="period">2026-03-04</td>
+  <td class="title">도로굴착부담금 환급금 부과(영등포구-2024-기타-0006)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35570032" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성동구" data-search="서울특별시 성동구 서울아리수본부 동부수도사업소 급수운영과 「2025년 광진·성동구 관내 상수도공사 재해예방 기술지도 용역」 추가 과업 지시 검토 보고 — 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리">
+  <td class="idx">33</td><td class="region">서울특별시 성동구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-06</td>
+  <td class="title">「2025년 광진·성동구 관내 상수도공사 재해예방 기술지도 용역」 추가 과업 지시 검토 보고<div class="gov">공식분류: 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리</div><div class="who">담당: 전진영 (02-3146-2750) · 급수운영과-4236</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35605174" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구) — ">
+  <td class="idx">34</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-12</td>
+  <td class="title">도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35633516" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)-시설관리과 여주은 — ">
+  <td class="idx">35</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-13</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)-시설관리과 여주은</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35638930" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 서울아리수본부 강서수도사업소 급수운영과 도로굴착 복구의뢰(양천구 시설물 3.16.~17.) — ">
+  <td class="idx">36</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-18</td>
+  <td class="title">도로굴착 복구의뢰(양천구 시설물 3.16.~17.)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35672209" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 구로구" data-search="서울특별시 구로구 서울아리수본부 강서수도사업소 급수운영과 도로굴착 복구의뢰(구로구 구로동 458번지 외 5개소) — ">
+  <td class="idx">37</td><td class="region">서울특별시 구로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-20</td>
+  <td class="title">도로굴착 복구의뢰(구로구 구로동 458번지 외 5개소)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35695796" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 금천구" data-search="서울특별시 금천구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-금천구)-시설관리과 여주은 — ">
+  <td class="idx">38</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-24</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-금천구)-시설관리과 여주은</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35715172" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 금천구" data-search="서울특별시 금천구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-금천구) — ">
+  <td class="idx">39</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-24</td>
+  <td class="title">도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-금천구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35717386" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 서울아리수본부 강서수도사업소 시설관리과 일반지출결의서_포장도로 굴착복구비 납부[긴급누수복구(강서구)] 포장도로 ">
+  <td class="idx">40</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-03-25</td>
+  <td class="title">일반지출결의서_포장도로 굴착복구비 납부[긴급누수복구(강서구)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35727203" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">41</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-02</td>
+  <td class="title">도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35793182" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">42</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-03</td>
+  <td class="title">일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35807643" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 구로구" data-search="서울특별시 구로구 서울아리수본부 강서수도사업소 급수운영과 도로굴착 복구의뢰(구로구 구로동 129번지 외 1개소) — ">
+  <td class="idx">43</td><td class="region">서울특별시 구로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-06</td>
+  <td class="title">도로굴착 복구의뢰(구로구 구로동 129번지 외 1개소)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35818490" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 금천구" data-search="서울특별시 금천구 금천소방서 재난관리과 금천구 관내 포장도로 굴착복구공사 시행 알림-3차 포장도로 ">
+  <td class="idx">44</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-04-08</td>
+  <td class="title">금천구 관내 포장도로 굴착복구공사 시행 알림-3차</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35843471" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 구로구" data-search="서울특별시 구로구 서울아리수본부 강서수도사업소 급수운영과 도로굴착 복구의뢰(구로구 온수동 7-5번지 외 2개소) — ">
+  <td class="idx">45</td><td class="region">서울특별시 구로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-13</td>
+  <td class="title">도로굴착 복구의뢰(구로구 온수동 7-5번지 외 2개소)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35874093" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 강서구 안전교통국 도로 과 도로굴착복구기금 운용심의회 결산보고 개최 결과보고 — ">
+  <td class="idx">46</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-04-15</td>
+  <td class="title">도로굴착복구기금 운용심의회 결산보고 개최 결과보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35906755" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 양천구 기반시설국 도로 과 굴착복구비 납부[2026년 오목로 가로등 개량공사] 오목로 ">
+  <td class="idx">47</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">오목로</td><td class="period">2026-04-16</td>
+  <td class="title">굴착복구비 납부[2026년 오목로 가로등 개량공사]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35916198" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구) — ">
+  <td class="idx">48</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-16</td>
+  <td class="title">도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35903050" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)-시설관리과 여주은 — ">
+  <td class="idx">49</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-17</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)-시설관리과 여주은</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35910895" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 서울아리수본부 중부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부 (2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  도로굴착및복구">
+  <td class="idx">50</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-22</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부 (2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  도로굴착및복구</div><div class="who">담당: 이미송 (02-3146-2206) · 시설관리과-9880</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35945442" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 서울아리수본부 강서수도사업소 시설관리과 도로포장 복구의뢰(강서구 개화동 23x 일대) — ">
+  <td class="idx">51</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-24</td>
+  <td class="title">도로포장 복구의뢰(강서구 개화동 23x 일대)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35963452" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(2025년 영등포구 관내 상수도 공사-사후정산분) — ">
+  <td class="idx">52</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-24</td>
+  <td class="title">도로굴착복구비 납부(2025년 영등포구 관내 상수도 공사-사후정산분)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35964806" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 서울아리수본부 강서수도사업소 시설관리과 포장도로 굴착복구비 납부(2025년 강서구 관내 상수도시설물 설치 및 보수공사) 포장도로 ">
+  <td class="idx">53</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-04-27</td>
+  <td class="title">포장도로 굴착복구비 납부(2025년 강서구 관내 상수도시설물 설치 및 보수공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35967858" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 서울아리수본부 강서수도사업소 시설관리과 일반지출결의서_포장도로 굴착복구비 납부(2025년 강서구 관내 상수도시설물 설치 및 보수공사) 포장도로 ">
+  <td class="idx">54</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-04-28</td>
+  <td class="title">일반지출결의서_포장도로 굴착복구비 납부(2025년 강서구 관내 상수도시설물 설치 및 보수공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35979728" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-영등포구) — ">
+  <td class="idx">55</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-28</td>
+  <td class="title">도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-영등포구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35986025" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(2025년 영등포구 관내 상수도 공사-사후정산분) - 시설관리과 — ">
+  <td class="idx">56</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-28</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(2025년 영등포구 관내 상수도 공사-사후정산분) - 시설관리과</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35982320" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 도봉구" data-search="서울특별시 도봉구 도로사업소 북부도로사업소 기전과 도로굴착 복구비 납부(연간단가2구역-1차 작업지시, 도봉구) 북부도로 교통 &gt;  교통관리  &gt;  교통시설물관리  &gt;  교통안전시설물설치및관리  &gt;  교통안전시설물사업관리">
+  <td class="idx">57</td><td class="region">서울특별시 도봉구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">북부도로</td><td class="period">2026-04-29</td>
+  <td class="title">도로굴착 복구비 납부(연간단가2구역-1차 작업지시, 도봉구)<div class="gov">공식분류: 교통 &gt;  교통관리  &gt;  교통시설물관리  &gt;  교통안전시설물설치및관리  &gt;  교통안전시설물사업관리</div><div class="who">담당: 이윤곤 (02-944-5473) · 기전과-4973</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35995862" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-영등포구)-시설관리과 — ">
+  <td class="idx">58</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-29</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-영등포구)-시설관리과</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35993865" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 금천구" data-search="서울특별시 금천구 금천소방서 재난관리과 금천구 관내 포장도로 굴착복구공사 시행 알림-5차(연간단가) 포장도로 ">
+  <td class="idx">59</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-05-06</td>
+  <td class="title">금천구 관내 포장도로 굴착복구공사 시행 알림-5차(연간단가)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36029903" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 노원구" data-search="서울특별시 노원구 노원 구 안전교통건설국 토목과 「서울특별시 노원구 도로굴착복구기금 설치 및 운용 조례」일부개정 및「서울특별시노원구도로굴착복구기금설치및운용조례시행규칙」폐지 계획 서울특별시노원구도로 기타">
+  <td class="idx">60</td><td class="region">서울특별시 노원구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">서울특별시노원구도로</td><td class="period">2026-05-07</td>
+  <td class="title">「서울특별시 노원구 도로굴착복구기금 설치 및 운용 조례」일부개정 및「서울특별시노원구도로굴착복구기금설치및운용조례시행규칙」폐지 계획<div class="gov">공식분류: 기타</div><div class="who">담당: 백승원 · 토목과-7560</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36057028" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">61</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-08</td>
+  <td class="title">도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36054686" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 서울아리수본부 중부수도사업소 시설관리과 도로굴착복구비 납부(2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">62</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-12</td>
+  <td class="title">도로굴착복구비 납부(2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 박성민 (02-3146-2208) · 시설관리과-11344</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36079427" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">63</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-12</td>
+  <td class="title">일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36078244" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 금천구" data-search="서울특별시 금천구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-금천구) — ">
+  <td class="idx">64</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-13</td>
+  <td class="title">도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-금천구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36084169" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 서울아리수본부 중부수도사업소 시설관리과 도로굴착복구비 납부(수정)(2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">65</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-14</td>
+  <td class="title">도로굴착복구비 납부(수정)(2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 박성민 (02-3146-2208) · 시설관리과-11738</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36097481" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 금천구" data-search="서울특별시 금천구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-금천구)-시설관리과 — ">
+  <td class="idx">66</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-14</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-금천구)-시설관리과</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36092636" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 서울아리수본부 중부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부 (2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">67</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-18</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부 (2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 박성민 (02-3146-2208) · 시설관리과-11893</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36115247" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 노원구" data-search="서울특별시 노원구 도로사업소 북부도로사업소 기전과 도로굴착 복구비 납부(연간단가2구역-1차 작업지시, 노원구) 북부도로 교통 &gt;  교통관리  &gt;  교통시설물관리  &gt;  교통안전시설물설치및관리  &gt;  교통안전시설물사업관리">
+  <td class="idx">68</td><td class="region">서울특별시 노원구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">북부도로</td><td class="period">2026-05-19</td>
+  <td class="title">도로굴착 복구비 납부(연간단가2구역-1차 작업지시, 노원구)<div class="gov">공식분류: 교통 &gt;  교통관리  &gt;  교통시설물관리  &gt;  교통안전시설물설치및관리  &gt;  교통안전시설물사업관리</div><div class="who">담당: 이윤곤 (02-944-5473) · 기전과-5627</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36121907" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구) — ">
+  <td class="idx">69</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-19</td>
+  <td class="title">도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36123970" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 서울아리수본부 중부수도사업소 시설관리과 도로굴착복구비 납부(2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  도로굴착및복구">
+  <td class="idx">70</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-21</td>
+  <td class="title">도로굴착복구비 납부(2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  도로굴착및복구</div><div class="who">담당: 박성민 (02-3146-2208) · 시설관리과-12324</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36141312" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)-시설관리과 여주은 — ">
+  <td class="idx">71</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-21</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)-시설관리과 여주은</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36143922" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 중랑구" data-search="서울특별시 중랑구 중랑구 안전건설교통국 치수과 관급자재 구매[주철맨홀뚜껑-2026년 하수도시설물 유지보수공사(연간단가)]-맨홀추락방지시설 설치(3) — 환경 &gt;  중하수도  &gt;  하수도  &gt;  하수도사업추진  &gt;  하수시설물유지관리사업(반복)">
+  <td class="idx">72</td><td class="region">서울특별시 중랑구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-22</td>
+  <td class="title">관급자재 구매[주철맨홀뚜껑-2026년 하수도시설물 유지보수공사(연간단가)]-맨홀추락방지시설 설치(3)<div class="gov">공식분류: 환경 &gt;  중하수도  &gt;  하수도  &gt;  하수도사업추진  &gt;  하수시설물유지관리사업(반복)</div><div class="who">담당: 김동립 (02-2094-2757) · 치수과-9567</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36157948" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 서울아리수본부 중부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부 (2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">73</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-26</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부 (2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 박성민 (02-3146-2208) · 시설관리과-12497</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36166185" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 동작구" data-search="서울특별시 동작구 동작구 안전환경국 치수과 하수도 준설공사 市 재난관리기금 집행계획 — ">
+  <td class="idx">74</td><td class="region">서울특별시 동작구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-26</td>
+  <td class="title">하수도 준설공사 市 재난관리기금 집행계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36171311" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 교통건설국 치수과 - 빗물받이 준설 예산 확보에 따른 - 관내 하수도 준설(세정)공사 시행계획 — 환경 &gt;  중하수도  &gt;  하수도  &gt;  공공하수도관리  &gt;  공공하수도시설준설">
+  <td class="idx">75</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-27</td>
+  <td class="title">- 빗물받이 준설 예산 확보에 따른 - 관내 하수도 준설(세정)공사 시행계획<div class="gov">공식분류: 환경 &gt;  중하수도  &gt;  하수도  &gt;  공공하수도관리  &gt;  공공하수도시설준설</div><div class="who">담당: 이경성 (02-901-5894) · 치수과-7941</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36181356" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서대문구 안전건설국 치수과 「2026년도 관내 하수도 준설공사(연간단가)」설계변경(1회) 검토 보고 — ">
+  <td class="idx">76</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-28</td>
+  <td class="title">「2026년도 관내 하수도 준설공사(연간단가)」설계변경(1회) 검토 보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36190813" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 종로구" data-search="서울특별시 종로구 종로구 도시안전국 치수과 「2026년 관내 하수도 준설공사(연간단가)」낙찰차액 사용계획 보고 — 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  치수관리">
+  <td class="idx">77</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-01</td>
+  <td class="title">「2026년 관내 하수도 준설공사(연간단가)」낙찰차액 사용계획 보고<div class="gov">공식분류: 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  치수관리</div><div class="who">담당: 조재관 (02-2148-3223) · 치수과-9824</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36215930" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 중구" data-search="서울특별시 중구 중구 안전건설교통국 치수과 - 2026년 관내 하수도 준설공사(연간단가) -설계변경(제1회) 검토보고 — 환경 &gt;  중하수도  &gt;  하수도  &gt;  하수도사업추진  &gt;  하수도관리">
+  <td class="idx">78</td><td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-01</td>
+  <td class="title">- 2026년 관내 하수도 준설공사(연간단가) -설계변경(제1회) 검토보고<div class="gov">공식분류: 환경 &gt;  중하수도  &gt;  하수도  &gt;  하수도사업추진  &gt;  하수도관리</div><div class="who">담당: 김병훈 (02-3396-6142) · 치수과-10403</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36215941" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 교통건설국 치수과 설계변경(제1회) 시행(2026년 관내 하수도 준설공사) — 환경 &gt;  중하수도  &gt;  하수도  &gt;  공공하수도관리  &gt;  공공하수도시설준설">
+  <td class="idx">79</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-01</td>
+  <td class="title">설계변경(제1회) 시행(2026년 관내 하수도 준설공사)<div class="gov">공식분류: 환경 &gt;  중하수도  &gt;  하수도  &gt;  공공하수도관리  &gt;  공공하수도시설준설</div><div class="who">담당: 이경성 (02-901-5894) · 치수과-8302</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36216210" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 교통건설국 치수과 - 2026년 관내 하수도 준설(세정)공사(연간단가) -설계변경(제1회) 보고 — 환경 &gt;  중하수도  &gt;  하수도  &gt;  공공하수도관리  &gt;  공공하수도시설준설">
+  <td class="idx">80</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-01</td>
+  <td class="title">- 2026년 관내 하수도 준설(세정)공사(연간단가) -설계변경(제1회) 보고<div class="gov">공식분류: 환경 &gt;  중하수도  &gt;  하수도  &gt;  공공하수도관리  &gt;  공공하수도시설준설</div><div class="who">담당: 이경성 (02-901-5894) · 치수과-8163</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36215896" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 노원구" data-search="서울특별시 노원구 도로사업소 북부도로사업소 기전과 도로굴착 복구비 납부(연간단가2구역-1차 작업지시, 노원구) 북부도로 교통 &gt;  교통관리  &gt;  교통시설물관리  &gt;  교통안전시설물설치및관리  &gt;  교통안전시설물사업관리">
+  <td class="idx">81</td><td class="region">서울특별시 노원구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">북부도로</td><td class="period">2026-06-01</td>
+  <td class="title">도로굴착 복구비 납부(연간단가2구역-1차 작업지시, 노원구)<div class="gov">공식분류: 교통 &gt;  교통관리  &gt;  교통시설물관리  &gt;  교통안전시설물설치및관리  &gt;  교통안전시설물사업관리</div><div class="who">담당: 이윤곤 (02-944-5473) · 기전과-6103</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36212071" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서대문구 안전건설국 치수과 공사 시행 [홍은중앙로3길 9 일대 외 5개소 원형관로 보수공사] - 긴급 홍은중앙로3길, 홍은중앙로, 원형관로 ">
+  <td class="idx">82</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">홍은중앙로3길, 홍은중앙로, 원형관로</td><td class="period">2026-06-01</td>
+  <td class="title">공사 시행 [홍은중앙로3길 9 일대 외 5개소 원형관로 보수공사] - 긴급</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36215924" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강동구" data-search="서울특별시 강동구 강동구 건설교통국 치수과 2026년 하수도구조물 정비공사(연간단가) 설계변경 검토 보고(제1회) — ">
+  <td class="idx">83</td><td class="region">서울특별시 강동구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-01</td>
+  <td class="title">2026년 하수도구조물 정비공사(연간단가) 설계변경 검토 보고(제1회)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36216466" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 용산구" data-search="서울특별시 용산구 용산구 안전건설교통국 치수과 - 공사장 사고사례 전파 및 재해예방을 위한 -하수도 공사관계자 안전교육 결과보고 — 안전 &gt;  재난예방관리  &gt;  안전관리총괄업무  &gt;  안전대책수립  &gt;  중대재해처벌법관련업무">
+  <td class="idx">84</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-04</td>
+  <td class="title">- 공사장 사고사례 전파 및 재해예방을 위한 -하수도 공사관계자 안전교육 결과보고<div class="gov">공식분류: 안전 &gt;  재난예방관리  &gt;  안전관리총괄업무  &gt;  안전대책수립  &gt;  중대재해처벌법관련업무</div><div class="who">담당: 전지승 (02-2199-7914) · 치수과-12941</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36239657" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서대문구 안전건설국 치수과 공사시행[응암로1길 10 일대 외 1개소 원형관로 보수공사]-긴급 응암로1길, 응암로, 원형관로 ">
+  <td class="idx">85</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">응암로1길, 응암로, 원형관로</td><td class="period">2026-06-04</td>
+  <td class="title">공사시행[응암로1길 10 일대 외 1개소 원형관로 보수공사]-긴급</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36239774" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 서초구" data-search="서울특별시 서초구 서초구 안전건설국 물관리과 장비·자재(4월)검사(감독) 조서-2026년 하수도 준설 및 세정공사(연간단가) — ">
+  <td class="idx">86</td><td class="region">서울특별시 서초구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-04</td>
+  <td class="title">장비·자재(4월)검사(감독) 조서-2026년 하수도 준설 및 세정공사(연간단가)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36240120" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 중구" data-search="서울특별시 중구 중구 안전건설교통국 치수과 설계변경 시행(제1회-2026년 관내 하수도 준설공사(연간단가)] — 환경 &gt;  중하수도  &gt;  하수도  &gt;  하수도사업추진  &gt;  하수도관리">
+  <td class="idx">87</td><td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-08</td>
+  <td class="title">설계변경 시행(제1회-2026년 관내 하수도 준설공사(연간단가)]<div class="gov">공식분류: 환경 &gt;  중하수도  &gt;  하수도  &gt;  하수도사업추진  &gt;  하수도관리</div><div class="who">담당: 김병훈 (02-3396-6142) · 치수과-10690</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36261271" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(은평구 관내 상수도시설물 설치 및 보수공사) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설관리  &gt;  상수도시설물점검및유지관리">
+  <td class="idx">88</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-09</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(은평구 관내 상수도시설물 설치 및 보수공사)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설관리  &gt;  상수도시설물점검및유지관리</div><div class="who">담당: 양동혁 (02-3146-3698) · 시설관리과-9612</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36270219" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 금천구" data-search="서울특별시 금천구 금천소방서 재난관리과 금천구 관내 포장도로 굴착복구공사 시행 알림-7차(연간단가) 포장도로 ">
+  <td class="idx">89</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-09</td>
+  <td class="title">금천구 관내 포장도로 굴착복구공사 시행 알림-7차(연간단가)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36268931" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 행정지원과 지출품의등록(도로굴착복구비 납부(은평구 관내 상수도 공사, 소화전 보수)) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">90</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-10</td>
+  <td class="title">지출품의등록(도로굴착복구비 납부(은평구 관내 상수도 공사, 소화전 보수))<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 고지성 (02-3146-3551) · 행정지원과-12820</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36280335" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(은평구 관내 상수도시설물 설치 및 보수공사) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설관리  &gt;  상수도시설물점검및유지관리">
+  <td class="idx">91</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-10</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(은평구 관내 상수도시설물 설치 및 보수공사)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설관리  &gt;  상수도시설물점검및유지관리</div><div class="who">담당: 양동혁 (02-3146-3698) · 시설관리과-9702</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36279375" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서대문구 안전건설국 치수과 설계변경(1회) 시행 [2026년도 관내 하수도 준설공사(연간단가)] — ">
+  <td class="idx">92</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-10</td>
+  <td class="title">설계변경(1회) 시행 [2026년도 관내 하수도 준설공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36281861" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 관악구 안전건설교통국 도로관리과 「2026년 보도 보수공사(연간단가)」 설계변경(1회) 검토보고 — ">
+  <td class="idx">93</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-10</td>
+  <td class="title">「2026년 보도 보수공사(연간단가)」 설계변경(1회) 검토보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36281976" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 종로구" data-search="서울특별시 종로구 종로구 도시안전국 치수과 「2026년 관내 하수도 준설공사(연간단가)」설계변경(제1회) 검토보고 — 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  치수관리">
+  <td class="idx">94</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-11</td>
+  <td class="title">「2026년 관내 하수도 준설공사(연간단가)」설계변경(제1회) 검토보고<div class="gov">공식분류: 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  치수관리</div><div class="who">담당: 조재관 (02-2148-3223) · 치수과-10486</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36291826" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 광진구" data-search="서울특별시 광진구 광진구 교통건설국 치수과 2026년 광진구 하수도 세정 및 준설공사(연간단가) 서울시 재난관리기금 활용 계획 — 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  하수도및빗물받이준설공사시행">
+  <td class="idx">95</td><td class="region">서울특별시 광진구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-11</td>
+  <td class="title">2026년 광진구 하수도 세정 및 준설공사(연간단가) 서울시 재난관리기금 활용 계획<div class="gov">공식분류: 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  하수도및빗물받이준설공사시행</div><div class="who">담당: 김원재 (02-450-7882) · 치수과-10934</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36291374" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 양천구" data-search="서울특별시 양천구 양천구 기반시설국 치수과 설계변경(2회) 시행[2026년 하수도 시설물 정비공사(연간단가)] — ">
+  <td class="idx">96</td><td class="region">서울특별시 양천구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-11</td>
+  <td class="title">설계변경(2회) 시행[2026년 하수도 시설물 정비공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36300040" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 관악구 안전건설교통국 도로관리과 설계변경(1회) 시행[2026년 보도 보수공사(연간단가)] — ">
+  <td class="idx">97</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-11</td>
+  <td class="title">설계변경(1회) 시행[2026년 보도 보수공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36292080" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강동구" data-search="서울특별시 강동구 강동구 건설교통국 치수과 설계변경(제1회) 시행[2026년 하수도구조물 정비공사(연간단가)] — ">
+  <td class="idx">98</td><td class="region">서울특별시 강동구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-11</td>
+  <td class="title">설계변경(제1회) 시행[2026년 하수도구조물 정비공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36291637" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 교통건설국 치수과 기성준공(감독)조서(1회)-2026년 관내 하수도 준설(세정)공사(연간단가)- — 환경 &gt;  중하수도  &gt;  하수도  &gt;  공공하수도관리  &gt;  공공하수도시설준설">
+  <td class="idx">99</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-12</td>
+  <td class="title">기성준공(감독)조서(1회)-2026년 관내 하수도 준설(세정)공사(연간단가)-<div class="gov">공식분류: 환경 &gt;  중하수도  &gt;  하수도  &gt;  공공하수도관리  &gt;  공공하수도시설준설</div><div class="who">담당: 이경성 (02-901-5894) · 치수과-8909</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36299983" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 노원구" data-search="서울특별시 노원구 서울아리수본부 북부수도사업소 급수운영과 도로복구 원인자부담금 납부(2025년 노원구 관내 급수공사_소화전) — 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리">
+  <td class="idx">100</td><td class="region">서울특별시 노원구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-12</td>
+  <td class="title">도로복구 원인자부담금 납부(2025년 노원구 관내 급수공사_소화전)<div class="gov">공식분류: 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리</div><div class="who">담당: 하태훈 (02-3146-3375) · 급수운영과-8431</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36297712" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 시설관리과 도로굴착복구비 납부(은평구 관내 상수도 공사, 소화전 보수) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">101</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-12</td>
+  <td class="title">도로굴착복구비 납부(은평구 관내 상수도 공사, 소화전 보수)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 민병재 (02-3146-3715) · 시설관리과-9867</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36296755" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구) — ">
+  <td class="idx">102</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-12</td>
+  <td class="title">도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36295987" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 강동구" data-search="서울특별시 강동구 강동구 건설교통국 교통행정과 - 강동구 보호구역내 미끄럼방지포장개선 - 교통안전시설(노면표시, 안전표지) 공사 시행계획 — ">
+  <td class="idx">103</td><td class="region">서울특별시 강동구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-12</td>
+  <td class="title">- 강동구 보호구역내 미끄럼방지포장개선 - 교통안전시설(노면표시, 안전표지) 공사 시행계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36300506" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 도봉구" data-search="서울특별시 도봉구 도로사업소 북부도로사업소 도로보수과 2026년 하반기 도로굴착사업계획 조정관련 도로포장 완료 및 계획 알림(도봉구) 북부도로 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리">
+  <td class="idx">104</td><td class="region">서울특별시 도봉구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">북부도로</td><td class="period">2026-06-15</td>
+  <td class="title">2026년 하반기 도로굴착사업계획 조정관련 도로포장 완료 및 계획 알림(도봉구)<div class="gov">공식분류: 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리</div><div class="who">담당: 박보성 (02-944-5435) · 도로보수과-7569</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36305284" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 노원구" data-search="서울특별시 노원구 도로사업소 북부도로사업소 도로보수과 2026년 하반기 도로굴착사업계획 조정관련 도로포장 계획 알림(노원구) 북부도로 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리">
+  <td class="idx">105</td><td class="region">서울특별시 노원구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">북부도로</td><td class="period">2026-06-15</td>
+  <td class="title">2026년 하반기 도로굴착사업계획 조정관련 도로포장 계획 알림(노원구)<div class="gov">공식분류: 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리</div><div class="who">담당: 박보성 (02-944-5435) · 도로보수과-7562</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36306148" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 시설관리과 포장도로 굴착복구 의뢰 (은평구 관내 상수도공사) 포장도로 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  급수공사완료및사후관리">
+  <td class="idx">106</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-15</td>
+  <td class="title">포장도로 굴착복구 의뢰 (은평구 관내 상수도공사)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  급수공사완료및사후관리</div><div class="who">담당: 황지은 (02-3146-3715) · 시설관리과-9951</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36302308" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 일반지출결의서_도로굴착복구비 납부(마포구 상수도 시설물 정비공사 no.153~160,163~166) — ">
+  <td class="idx">107</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-15</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(마포구 상수도 시설물 정비공사 No.153~160,163~166)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36303888" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 일반지출결의서_도로굴착복구비 납부(2026년 마포구 관내 상수도공사-개량) — ">
+  <td class="idx">108</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-15</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(2026년 마포구 관내 상수도공사-개량)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36308828" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 도로굴착복구비 납부(마포구 상수도 시설물 정비공사 no.119) — ">
+  <td class="idx">109</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-15</td>
+  <td class="title">도로굴착복구비 납부(마포구 상수도 시설물 정비공사 No.119)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36309951" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 구로구" data-search="서울특별시 구로구 구로구 건설정책국 치수과 설계변경(제1회) 시행[2026년 관내 하수도 및 펌프장 준설공사(연간단가)] — ">
+  <td class="idx">110</td><td class="region">서울특별시 구로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-15</td>
+  <td class="title">설계변경(제1회) 시행[2026년 관내 하수도 및 펌프장 준설공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36321914" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 구로구" data-search="서울특별시 구로구 구로구 건설정책국 치수과 설계변경(1회)검토 보고[2026년 관내 하수도 및 펌프장 준설공사(연간단가)] — ">
+  <td class="idx">111</td><td class="region">서울특별시 구로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-15</td>
+  <td class="title">설계변경(1회)검토 보고[2026년 관내 하수도 및 펌프장 준설공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36321912" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 종로구" data-search="서울특별시 종로구 종로구 도시안전국 치수과 설계변경(제1회) 시행[2026년 관내 하수도 준설공사(연간단가)] — 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  치수관리">
+  <td class="idx">112</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">설계변경(제1회) 시행[2026년 관내 하수도 준설공사(연간단가)]<div class="gov">공식분류: 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  치수관리</div><div class="who">담당: 조재관 (02-2148-3223) · 치수과-10785</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36321804" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 도로사업소 북부도로사업소 도로보수과 2026년 하반기 도로굴착사업계획 조정관련 도로포장 완료 및 계획 알림(성북구) 북부도로 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리">
+  <td class="idx">113</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">북부도로</td><td class="period">2026-06-16</td>
+  <td class="title">2026년 하반기 도로굴착사업계획 조정관련 도로포장 완료 및 계획 알림(성북구)<div class="gov">공식분류: 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착공사시행  &gt;  도로굴착공사관리</div><div class="who">담당: 박보성 (02-944-5435) · 도로보수과-7621</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36319467" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 서울아리수본부 중부수도사업소 시설관리과 도로굴착복구비 납부(2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  도로굴착및복구">
+  <td class="idx">114</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">도로굴착복구비 납부(2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  도로굴착및복구</div><div class="who">담당: 박성민 (02-3146-2208) · 시설관리과-14357</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36318198" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 시설관리과 도로굴착복구비 납부(은평구 관내 상수도시설물 설치 및 보수공사) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">115</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">도로굴착복구비 납부(은평구 관내 상수도시설물 설치 및 보수공사)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 민병재 (02-3146-3715) · 시설관리과-10090</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36314131" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 일반지출결의서_도로굴착복구비 납부(2025년 마포구 관내 상수도공사-신설) — ">
+  <td class="idx">116</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(2025년 마포구 관내 상수도공사-신설)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36313307" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 일반지출결의서_도로굴착복구비 납부(마포구 상수도 시설물 정비공사 no.119) — ">
+  <td class="idx">117</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(마포구 상수도 시설물 정비공사 No.119)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36313357" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 일반지출결의서_도로굴착복구비 납부(2026년 마포구 관내 상수도공사-개량) — ">
+  <td class="idx">118</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(2026년 마포구 관내 상수도공사-개량)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36314317" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 일반지출결의서_도로굴착복구비 납부(2026년 마포구 관내 상수도공사-신설) — ">
+  <td class="idx">119</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(2026년 마포구 관내 상수도공사-신설)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36313184" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 서초구" data-search="서울특별시 서초구 서초구 안전건설국 도로과 「2026년 관내 보도 유지보수공사(연간단가)」설계변경 검토보고(제1회) — ">
+  <td class="idx">120</td><td class="region">서울특별시 서초구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">「2026년 관내 보도 유지보수공사(연간단가)」설계변경 검토보고(제1회)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36322032" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 광진구" data-search="서울특별시 광진구 광진구 교통건설국 치수과 - 2026년 광진구 하수도 세정 및 준설공사(연간단가) - 설계변경(제1회) 검토 보고 — 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  하수도및빗물받이준설공사시행">
+  <td class="idx">121</td><td class="region">서울특별시 광진구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-17</td>
+  <td class="title">- 2026년 광진구 하수도 세정 및 준설공사(연간단가) - 설계변경(제1회) 검토 보고<div class="gov">공식분류: 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  하수도및빗물받이준설공사시행</div><div class="who">담당: 김원재 (02-450-7882) · 치수과-11326</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36331439" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 성북구" data-search="서울특별시 성북구 서울아리수본부 중부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부 (2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">122</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-17</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부 (2025년 종로,성북구 관내 상수도시설물 설치 및 보수공사, 시설물)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 박성민 (02-3146-2208) · 시설관리과-14470</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36325097" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 노원구" data-search="서울특별시 노원구 서울아리수본부 북부수도사업소 급수운영과 도로굴착 허가 협조요청[노원구 관내 미급수지역(경수사) 상수도공사] — 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리">
+  <td class="idx">123</td><td class="region">서울특별시 노원구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-17</td>
+  <td class="title">도로굴착 허가 협조요청[노원구 관내 미급수지역(경수사) 상수도공사]<div class="gov">공식분류: 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리</div><div class="who">담당: 하태훈 (02-3146-3375) · 급수운영과-8700</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36323235" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(은평구 관내 상수도시설물 설치 및 보수공사) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리">
+  <td class="idx">124</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-17</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(은평구 관내 상수도시설물 설치 및 보수공사)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도회계관리  &gt;  상수도지출결의관리</div><div class="who">담당: 민병재 (02-3146-3715) · 시설관리과-10146</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36324341" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 도로굴착복구비 납부(2025년 마포구 관내 상수도공사-소블록세척) — ">
+  <td class="idx">125</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-17</td>
+  <td class="title">도로굴착복구비 납부(2025년 마포구 관내 상수도공사-소블록세척)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36322932" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 관악구" data-search="서울특별시 관악구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)-시설관리과 — ">
+  <td class="idx">126</td><td class="region">서울특별시 관악구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-17</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(남부 관내 상수도 긴급누수복구공사-관악구)-시설관리과</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36328465" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 일반지출결의서_도로굴착복구비 납부(2025년 마포구 관내 상수도공사-소블록세척) — ">
+  <td class="idx">127</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-18</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(2025년 마포구 관내 상수도공사-소블록세척)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36340100" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 서울아리수본부 강서수도사업소 시설관리과 포장도로 굴착복구비 납부(2026년 강서구 관내 상수도시설물 설치 및 보수공사) 포장도로 ">
+  <td class="idx">128</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-18</td>
+  <td class="title">포장도로 굴착복구비 납부(2026년 강서구 관내 상수도시설물 설치 및 보수공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36333956" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 서울아리수본부 남부수도사업소 시설관리과 도로굴착복구비 납부(2026년 상도동 등 8개동 장기사용 배급수관 정비공사-영등포구) — ">
+  <td class="idx">129</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-18</td>
+  <td class="title">도로굴착복구비 납부(2026년 상도동 등 8개동 장기사용 배급수관 정비공사-영등포구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36332432" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 동작구" data-search="서울특별시 동작구 동작구 안전환경국 치수과 기성부분검사(감독)조서(1회)[2026년 하수도 준설공사(연간단가)] — ">
+  <td class="idx">130</td><td class="region">서울특별시 동작구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-18</td>
+  <td class="title">기성부분검사(감독)조서(1회)[2026년 하수도 준설공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36341247" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">131</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-18</td>
+  <td class="title">도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36337026" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 광진구" data-search="서울특별시 광진구 서울아리수본부 동부수도사업소 급수운영과 일반지출결의서_도로굴착복구비 납부 (광진구 구의동 74-2) - 급수과 전진영 — 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리">
+  <td class="idx">132</td><td class="region">서울특별시 광진구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부 (광진구 구의동 74-2) - 급수과 전진영<div class="gov">공식분류: 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리</div><div class="who">담당: 전진영 (02-3146-2750) · 급수운영과-11979</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36342395" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 광진구" data-search="서울특별시 광진구 광진구 교통건설국 치수과 설계변경(제1회) 시행[2026년 광진구 하수도 세정 및 준설공사(연간단가)] — 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  하수도및빗물받이준설공사시행">
+  <td class="idx">133</td><td class="region">서울특별시 광진구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">설계변경(제1회) 시행[2026년 광진구 하수도 세정 및 준설공사(연간단가)]<div class="gov">공식분류: 안전 &gt;  재난예방관리  &gt;  재난재해예방업무  &gt;  침수예방사업  &gt;  하수도및빗물받이준설공사시행</div><div class="who">담당: 김원재 (02-450-7882) · 치수과-11659</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36345990" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 건설안전국 도로 과 - 2026년 포장도로 굴착복구공사(연간단가)-설계변경(제1회) 시행계획 검토 포장도로 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착관리  &gt;  도로굴착공사관리">
+  <td class="idx">134</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-19</td>
+  <td class="title">- 2026년 포장도로 굴착복구공사(연간단가)-설계변경(제1회) 시행계획 검토<div class="gov">공식분류: 교통 &gt;  도로정책  &gt;  도로굴착관련정책  &gt;  도로굴착관리  &gt;  도로굴착공사관리</div><div class="who">담당: 김소현 (2127-4827) · 도로과-10724</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36346229" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 은평구 안전도시국 치수과 2026년 관내 하수도 준설공사(연간단가) 설계변경(1회) 검토보고 — 기타">
+  <td class="idx">135</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">2026년 관내 하수도 준설공사(연간단가) 설계변경(1회) 검토보고<div class="gov">공식분류: 기타</div><div class="who">담당: 이효진 · 치수과-9211</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36351162" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서울아리수본부 서부수도사업소 급수운영과 도로굴착복구비 납부(2025년 서대문구 관내 상수도공사-개량) — 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리">
+  <td class="idx">136</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">도로굴착복구비 납부(2025년 서대문구 관내 상수도공사-개량)<div class="gov">공식분류: 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리</div><div class="who">담당: 김왕근 (02-3146-3662) · 급수운영과-11166</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36349004" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 서울아리수본부 강서수도사업소 시설관리과 일반지출결의서_포장도로 굴착복구비 납부(2026년 강서구 관내 상수도시설물 설치 및 보수공사) 포장도로 ">
+  <td class="idx">137</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-19</td>
+  <td class="title">일반지출결의서_포장도로 굴착복구비 납부(2026년 강서구 관내 상수도시설물 설치 및 보수공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36350071" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 송파구" data-search="서울특별시 송파구 서울아리수본부 강동수도사업소 급수운영과 일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">138</td><td class="region">서울특별시 송파구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">일반지출결의서_도로굴착 복구비 납부(2025년 송파구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36345659" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 동부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(답십리동 38-○○, 신설) - 시설과 김재훈 — ">
+  <td class="idx">139</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(답십리동 38-○○, 신설) - 시설과 김재훈</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36344189" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 동부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(이문동 212-○, 346-○○, 신설) - 시설과 김재훈 — ">
+  <td class="idx">140</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(이문동 212-○, 346-○○, 신설) - 시설과 김재훈</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36347548" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 서부수도사업소 급수운영과 『2026년 서부관내 포장도로 굴착복구공사』 현장대리인 이탈에 따른 변경승인 검토 보고 포장도로 ">
+  <td class="idx">141</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-19</td>
+  <td class="title">『2026년 서부관내 포장도로 굴착복구공사』 현장대리인 이탈에 따른 변경승인 검토 보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36349047" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 서부수도사업소 급수운영과 「2025년 서부관내 포장도로 굴착복구공사」설계변경(3차, 최종) 시행 보고 포장도로 ">
+  <td class="idx">142</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-20</td>
+  <td class="title">「2025년 서부관내 포장도로 굴착복구공사」설계변경(3차, 최종) 시행 보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36348739" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 강서수도사업소 급수운영과 공사근로자 노무비 및 장비대금 적정성 검토보고(수정) (2025년 강서수도사업소 관내 포장도로 굴착복구공사) 포장도로 ">
+  <td class="idx">143</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-21</td>
+  <td class="title">공사근로자 노무비 및 장비대금 적정성 검토보고(수정) (2025년 강서수도사업소 관내 포장도로 굴착복구공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36351332" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 강서수도사업소 급수운영과 포장도로 굴착복구 작업지시 및 감독 의뢰(no.8) 포장도로 ">
+  <td class="idx">144</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-21</td>
+  <td class="title">포장도로 굴착복구 작업지시 및 감독 의뢰(No.8)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36351331" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 도시기반시설본부 시설국 토목부 흙막이가시설 굴착단계 지도점검 요청[국제교류복합지구 도로개선사업(2공구)] — ">
+  <td class="idx">145</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-21</td>
+  <td class="title">흙막이가시설 굴착단계 지도점검 요청[국제교류복합지구 도로개선사업(2공구)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36351448" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 종로구" data-search="서울특별시 종로구 서울아리수본부 중부수도사업소 시설관리과 관급자재 출고요청[2026년 종로구 관내 상수도공사(개량)] — 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  자재관리  &gt;  상수도공사자재관리">
+  <td class="idx">146</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">관급자재 출고요청[2026년 종로구 관내 상수도공사(개량)]<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  자재관리  &gt;  상수도공사자재관리</div><div class="who">담당: 서호태 (02-3146-2222) · 시설관리과-14894</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360902" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 종로구" data-search="서울특별시 종로구 서울아리수본부 중부수도사업소 시설관리과 2026년 종로구 관내 상수도공사(개량) 구매요구 — 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  자재관리  &gt;  상수도공사자재관리">
+  <td class="idx">147</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">2026년 종로구 관내 상수도공사(개량) 구매요구<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  자재관리  &gt;  상수도공사자재관리</div><div class="who">담당: 서호태 (02-3146-2222) · 시설관리과-14873</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36355436" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 중구" data-search="서울특별시 중구 서울아리수본부 중부수도사업소 급수운영과 공사 안내 및 노상 공영주차장 점용 협조 요청(중구 관내 상수도공사) — 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리">
+  <td class="idx">148</td><td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">공사 안내 및 노상 공영주차장 점용 협조 요청(중구 관내 상수도공사)<div class="gov">공식분류: 행정 &gt;  일반행정지원  &gt;  과공통일반사무  &gt;  일반관리(서무)  &gt;  일반업무관리</div><div class="who">담당: 김두섭 (02-3146-2146) · 급수운영과-11964</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36357445" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 용산구" data-search="서울특별시 용산구 서울아리수본부 중부수도사업소 급수운영과 도로굴착복구비 납부(2026년 용산구 관내 상수도공사, 신설) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  급수공사시행및관리">
+  <td class="idx">149</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착복구비 납부(2026년 용산구 관내 상수도공사, 신설)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  급수공사시행및관리</div><div class="who">담당: 정우석 (02-3146-2148) · 급수운영과-11982</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36355474" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 서울아리수본부 동부수도사업소 시설관리과 관급자재 출고요청(2026년 중랑구, 동대문구 관내 상수도공사(개량)-부단수제수밸브d150 200) — 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  자재관리  &gt;  상수도공사자재관리">
+  <td class="idx">150</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">관급자재 출고요청(2026년 중랑구, 동대문구 관내 상수도공사(개량)-부단수제수밸브D150 200)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  자재관리  &gt;  상수도공사자재관리</div><div class="who">담당: 강인원 (02-3146-2838) · 시설관리과-12878</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36352664" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 시설관리과 「2025년 은평구 관내 상수도공사」 공사기간 연기보고서 — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  급수공사발주및계약관리">
+  <td class="idx">151</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">「2025년 은평구 관내 상수도공사」 공사기간 연기보고서<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  급수공사발주및계약관리</div><div class="who">담당: 노경근 (02-3146-3695) · 시설관리과-10469</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36352599" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 은평구" data-search="서울특별시 은평구 서울아리수본부 서부수도사업소 시설관리과 2026년 은평구 관내 상수도공사(장기사용 배급수관) 구매요구 — 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  자재관리  &gt;  상수도공사자재관리">
+  <td class="idx">152</td><td class="region">서울특별시 은평구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">2026년 은평구 관내 상수도공사(장기사용 배급수관) 구매요구<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련기반시설및인력  &gt;  자재관리  &gt;  상수도공사자재관리</div><div class="who">담당: 노경근 (02-3146-3695) · 시설관리과-10403</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36351818" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서울아리수본부 서부수도사업소 급수운영과 도로굴착복구비 납부(2025년 서대문구 관내 상수도공사-배급수관) — 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  급수공사승인결정관리">
+  <td class="idx">153</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착복구비 납부(2025년 서대문구 관내 상수도공사-배급수관)<div class="gov">공식분류: 환경 &gt;  상수도  &gt;  상수도관련관리일반  &gt;  상수도시설공사  &gt;  급수공사승인결정관리</div><div class="who">담당: 정원형 (02-3146-3645) · 급수운영과-11340</div></td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360892" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서울아리수본부 서부수도사업소 급수운영과 관급자재 구매요구(2026년 서대문구, 마포구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">154</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">관급자재 구매요구(2026년 서대문구, 마포구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360420" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서울아리수본부 서부수도사업소 급수운영과 관급자재 출고요청(2026년 서대문구, 마포구 관내 상수도시설물 정비공사) — ">
+  <td class="idx">155</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">관급자재 출고요청(2026년 서대문구, 마포구 관내 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36357965" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 마포구" data-search="서울특별시 마포구 서울아리수본부 서부수도사업소 급수운영과 도로굴착복구비 납부(2026년 마포구 관내 상수도공사-개량) — ">
+  <td class="idx">156</td><td class="region">서울특별시 마포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착복구비 납부(2026년 마포구 관내 상수도공사-개량)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36358188" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 서울아리수본부 강서수도사업소 시설관리과 「2026년 강서구 관내 상수도시설물 설치 및 보수공사」시설물 점검 적출사항 정비계획 보고(no.1) — ">
+  <td class="idx">157</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">「2026년 강서구 관내 상수도시설물 설치 및 보수공사」시설물 점검 적출사항 정비계획 보고(NO.1)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36354135" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강서구" data-search="서울특별시 강서구 서울아리수본부 강서수도사업소 행정지원과 검사원지정요구서[2025년 강서구 관내 상수도시설물설치 및 보수공사(장기2차)] — ">
+  <td class="idx">158</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">검사원지정요구서[2025년 강서구 관내 상수도시설물설치 및 보수공사(장기2차)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360942" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 금천구" data-search="서울특별시 금천구 서울아리수본부 남부수도사업소 급수운영과 설계변경(제2회-최종) 검토 보고(2025년 관악,금천구 관내 상수도 시설물공사) — ">
+  <td class="idx">159</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">설계변경(제2회-최종) 검토 보고(2025년 관악,금천구 관내 상수도 시설물공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36353978" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 서울아리수본부 남부수도사업소 시설관리과 2026년 하반기 도로굴착사업계획서 제출(영등포구) — ">
+  <td class="idx">160</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">2026년 하반기 도로굴착사업계획서 제출(영등포구)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36352904" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 영등포구" data-search="서울특별시 영등포구 서울아리수본부 남부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(2026년 상도동 등 8개동 장기사용 배급수관 정비공사-영등포구)-시설관리과 — ">
+  <td class="idx">161</td><td class="region">서울특별시 영등포구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(2026년 상도동 등 8개동 장기사용 배급수관 정비공사-영등포구)-시설관리과</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36351847" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 동작구" data-search="서울특별시 동작구 서울아리수본부 남부수도사업소 시설관리과 설계변경 심사요청서[2025년 동작구 관내 상수도공사(제2회-최종)] — ">
+  <td class="idx">162</td><td class="region">서울특별시 동작구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">설계변경 심사요청서[2025년 동작구 관내 상수도공사(제2회-최종)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36355876" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 동작구" data-search="서울특별시 동작구 서울아리수본부 남부수도사업소 시설관리과 gis 현장조사서 통보(2025년 동작구 관내 상수도공사) — ">
+  <td class="idx">163</td><td class="region">서울특별시 동작구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">GIS 현장조사서 통보(2025년 동작구 관내 상수도공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36353428" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강남구" data-search="서울특별시 강남구 서울아리수본부 강남수도사업소 급수운영과 gis 샘플측량 의뢰(2025년 2차 강남구 관내 상수도시설물 설치 및 소화전 보수공사) — ">
+  <td class="idx">164</td><td class="region">서울특별시 강남구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">GIS 샘플측량 의뢰(2025년 2차 강남구 관내 상수도시설물 설치 및 소화전 보수공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36357293" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강남구" data-search="서울특별시 강남구 서울아리수본부 강남수도사업소 행정지원과 설계변경(1차,최종)시행 [2025년 2차 강남구 관내 상수도시설물 설치 및 소화전 보수공사](이호조) — ">
+  <td class="idx">165</td><td class="region">서울특별시 강남구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">설계변경(1차,최종)시행 [2025년 2차 강남구 관내 상수도시설물 설치 및 소화전 보수공사](이호조)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36361389" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강남구" data-search="서울특별시 강남구 서울아리수본부 강남수도사업소 급수운영과 예비준공검사 시행 알림(2025년 2차 강남구 관내 상수도시설물 설치 및 소화전 보수공사) — ">
+  <td class="idx">166</td><td class="region">서울특별시 강남구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">예비준공검사 시행 알림(2025년 2차 강남구 관내 상수도시설물 설치 및 소화전 보수공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360225" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강동구" data-search="서울특별시 강동구 서울아리수본부 강동수도사업소 시설관리과 2025년 강동구 상수도시설물 정비공사 구매요구 — ">
+  <td class="idx">167</td><td class="region">서울특별시 강동구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">2025년 강동구 상수도시설물 정비공사 구매요구</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36351852" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울특별시 강동구" data-search="서울특별시 강동구 서울아리수본부 강동수도사업소 시설관리과 gis 시설자료 제출(2025년 강동구 상수도시설물 정비공사) — ">
+  <td class="idx">168</td><td class="region">서울특별시 강동구</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">GIS 시설자료 제출(2025년 강동구 상수도시설물 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36355125" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 동부수도사업소 급수운영과 포장도로 굴착복구 작업지시 및 감독 의뢰-20260622 포장도로 ">
+  <td class="idx">169</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">포장도로 굴착복구 작업지시 및 감독 의뢰-20260622</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36353888" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 강서수도사업소 급수운영과 공사근로자 노무비(5월) 및 자재·장비대금(6차) 지출[2025년 강서수도사업소 관내 포장도로 굴착복구공사] 포장도로 ">
+  <td class="idx">170</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">공사근로자 노무비(5월) 및 자재·장비대금(6차) 지출[2025년 강서수도사업소 관내 포장도로 굴착복구공사]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36357012" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 중부수도사업소 시설관리과 도로굴착복구비 납부(2025년 정릉동 등 10개동 상수도공사, 개량) — ">
+  <td class="idx">171</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착복구비 납부(2025년 정릉동 등 10개동 상수도공사, 개량)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36355152" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 남부수도사업소 급수운영과 관급자재 구매 요청(2025년 2차 남부수도사업소 관내포장도로 굴착복구 공사, 미끄럼방지, 스템프 2회) 관내포장도로 ">
+  <td class="idx">172</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">관내포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">관급자재 구매 요청(2025년 2차 남부수도사업소 관내포장도로 굴착복구 공사, 미끄럼방지, 스템프 2회)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36354002" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 서부수도사업소 시설관리과 도로굴착공사 시 터파기 폭 적용기준 및 관련 근거자료 요청 — ">
+  <td class="idx">173</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착공사 시 터파기 폭 적용기준 및 관련 근거자료 요청</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36357906" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 남부수도사업소 행정지원과 분할납품요구서 및 물품조달요청 응답서 접수[2025년 2차 남부수도사업소 관내포장도로 굴착복구 공사[미끄럼방지 포장재(스탬프) 1회] 관내포장도로 ">
+  <td class="idx">174</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">관내포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">분할납품요구서 및 물품조달요청 응답서 접수[2025년 2차 남부수도사업소 관내포장도로 굴착복구 공사[미끄럼방지 포장재(스탬프) 1회]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360733" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 교통실 교통기획관 버스정책과 버스정류소 전기인입을 위한 도로굴착복구비 면제 요청 — ">
+  <td class="idx">175</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">버스정류소 전기인입을 위한 도로굴착복구비 면제 요청</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36353760" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 동부수도사업소 급수운영과 도로굴착 복구비 납부 — ">
+  <td class="idx">176</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착 복구비 납부</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36354509" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 도로 사업소 북부 도로 사업소 도로 보수과 기성부분검사(감독) 조서(1회)-2026년 포장도로 굴착복구공사(연간단가) 포장도로 ">
+  <td class="idx">177</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">기성부분검사(감독) 조서(1회)-2026년 포장도로 굴착복구공사(연간단가)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36355678" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 동부수도사업소 시설관리과 도로굴착복구비 납부(개량) — ">
+  <td class="idx">178</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착복구비 납부(개량)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360247" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 중부수도사업소 시설관리과 일반지출결의서_도로굴착복구비 납부(2026년 평창동 등 8개동 상수도공사, 신설) — ">
+  <td class="idx">179</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">일반지출결의서_도로굴착복구비 납부(2026년 평창동 등 8개동 상수도공사, 신설)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36354011" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 남부수도사업소 급수운영과 설계변경(1회-최종) 검토 보고(2025년 2차 남부수도사업소 관내포장도로 굴착복구 공사) 관내포장도로 ">
+  <td class="idx">180</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">관내포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">설계변경(1회-최종) 검토 보고(2025년 2차 남부수도사업소 관내포장도로 굴착복구 공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36353920" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 도로 사업소 남부 도로 사업소 도로 보수과 도로 굴착허가 검토 보고(금하로) 금하로 ">
+  <td class="idx">181</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">금하로</td><td class="period">2026-06-22</td>
+  <td class="title">도로 굴착허가 검토 보고(금하로)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36355430" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 동부수도사업소 급수운영과 포장도로 굴착복구 작업지시 및 감독 의뢰-20260619 포장도로 ">
+  <td class="idx">182</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">포장도로 굴착복구 작업지시 및 감독 의뢰-20260619</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36355984" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 중부수도사업소 시설관리과 도로굴착복구비 납부(2026년 평창동 등 8개동 상수도공사, 신설) — ">
+  <td class="idx">183</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착복구비 납부(2026년 평창동 등 8개동 상수도공사, 신설)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36354591" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 남부수도사업소 급수운영과 관급자재 구매 요청(2025년 2차 남부수도사업소 관내포장도로 굴착복구 공사, 미끄럼방지, 스탬프 1회) 관내포장도로 ">
+  <td class="idx">184</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">관내포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">관급자재 구매 요청(2025년 2차 남부수도사업소 관내포장도로 굴착복구 공사, 미끄럼방지, 스탬프 1회)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360035" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 강남수도사업소 급수운영과 착공계 보완요청[2026년 강남수도사업소 관내 포장도로 굴착복구 공사] 포장도로 ">
+  <td class="idx">185</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">착공계 보완요청[2026년 강남수도사업소 관내 포장도로 굴착복구 공사]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36357446" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 도로 사업소 북부 도로 사업소 관리단속과 기성검사원지정요구 - 2026년 포장도로 굴착복구공사(연간단가)-북부(1회, 정정) 포장도로 ">
+  <td class="idx">186</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">기성검사원지정요구 - 2026년 포장도로 굴착복구공사(연간단가)-북부(1회, 정정)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360109" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 강동수도사업소 급수운영과 도로굴착 복구비 납부(2026년 잠실동 외 2개동 장기사용 배급수관 정비공사) — ">
+  <td class="idx">187</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-22</td>
+  <td class="title">도로굴착 복구비 납부(2026년 잠실동 외 2개동 장기사용 배급수관 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36356538" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="road" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 서부수도사업소 급수운영과 설계변경(3차, 최종) 시행(2025년 서부관내 포장도로 굴착복구공사) 포장도로 ">
+  <td class="idx">188</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span><div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">설계변경(3차, 최종) 시행(2025년 서부관내 포장도로 굴착복구공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36353206" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 강서수도사업소 급수운영과 공사 현장 특별 안전점검 결과 보고(2026년 강서수도사업소 관내 포장도로 굴착복구공사) 포장도로 ">
+  <td class="idx">189</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">공사 현장 특별 안전점검 결과 보고(2026년 강서수도사업소 관내 포장도로 굴착복구공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36360184" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="water" data-impact="1" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 서울아리수본부 강남수도사업소 급수운영과 2026년 강남수도사업소 관내 포장도로 굴착복구공사착 공 계  검 토 보 고 포장도로 ">
+  <td class="idx">190</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#1d4ed8">상수도/하수도/단수</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">포장도로</td><td class="period">2026-06-22</td>
+  <td class="title">2026년 강남수도사업소 관내 포장도로 굴착복구공사착 공 계  검 토 보 고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36361350" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 서초구" data-search="서울특별시 서초구 서초구 밝은미래국 교육지원과 『구청장에게 바란다』답변(서초구립반포도서관 인근 흡연 피해 및 가로수 정비 강력 요청) — ">
+  <td class="idx">191</td><td class="region">서울특별시 서초구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-05-26</td>
+  <td class="title">『구청장에게 바란다』답변(서초구립반포도서관 인근 흡연 피해 및 가로수 정비 강력 요청)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/33547025" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 서초구" data-search="서울특별시 서초구 서초구 공간혁신국 정원여가과 『구청장에게 바란다』 답변 (서초반포구립도서관 인근 흡연피해 및 가로수 정비 강력요청 건) — ">
+  <td class="idx">192</td><td class="region">서울특별시 서초구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-06-02</td>
+  <td class="title">『구청장에게 바란다』 답변 (서초반포구립도서관 인근 흡연피해 및 가로수 정비 강력요청 건)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/33598868" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 서초구" data-search="서울특별시 서초구 서초구 공간혁신국 정원여가과 - 안전한 가로수 관리를 위한 -여름철 위험 가로수 정비 공사 추진계획 — ">
+  <td class="idx">193</td><td class="region">서울특별시 서초구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-08-13</td>
+  <td class="title">- 안전한 가로수 관리를 위한 -여름철 위험 가로수 정비 공사 추진계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/34114052" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강동구" data-search="서울특별시 강동구 강동구 건설교통국 푸른도시과 강일동 가로수 뿌리융기 정비공사 추진계획 — ">
+  <td class="idx">194</td><td class="region">서울특별시 강동구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-08-21</td>
+  <td class="title">강일동 가로수 뿌리융기 정비공사 추진계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/34160572" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 건설안전국 정원도시과 고산자로 가로수 정비공사 시행 고산자로 ">
+  <td class="idx">195</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">고산자로</td><td class="period">2025-09-12</td>
+  <td class="title">고산자로 가로수 정비공사 시행</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/34325159" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="event" data-impact="0" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 기획경제국 기획예산과 2025년 10월 주요업무 및 행사계획 송부 — ">
+  <td class="idx">196</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#7c3aed">축제/행사/장날/집회</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-09-30</td>
+  <td class="title">2025년 10월 주요업무 및 행사계획 송부</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/34453080" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 중구" data-search="서울특별시 중구 중구 도시관리국 공원녹지과 재난·차량사고 방지를 위한 가로수 정비계획 — ">
+  <td class="idx">197</td><td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-10-23</td>
+  <td class="title">재난·차량사고 방지를 위한 가로수 정비계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/34591228" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 건설안전국 정원도시과 물품검사(수)조서[관급자재 구매(고산자로 가로수 정비공사)] 고산자로 ">
+  <td class="idx">198</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">고산자로</td><td class="period">2025-11-14</td>
+  <td class="title">물품검사(수)조서[관급자재 구매(고산자로 가로수 정비공사)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/34762642" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 건설안전국 정원도시과 준공검사(감독)조서(고산자로 가로수 정비공사) 고산자로 ">
+  <td class="idx">199</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">고산자로</td><td class="period">2025-12-08</td>
+  <td class="title">준공검사(감독)조서(고산자로 가로수 정비공사)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/34951040" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 중구" data-search="서울특별시 중구 중구 도시관리국 공원녹지과 「재난·차량사고 대비 가로수 정비」낙찰차액 활용 및 사고이월 계획 — ">
+  <td class="idx">200</td><td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-12-17</td>
+  <td class="title">「재난·차량사고 대비 가로수 정비」낙찰차액 활용 및 사고이월 계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35034801" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 도시관리국 공원녹지과 준공검사(감독)조서(가로수 유지관리(띠녹지 정비 등) 연간단가 사업) — ">
+  <td class="idx">201</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2025-12-24</td>
+  <td class="title">준공검사(감독)조서(가로수 유지관리(띠녹지 정비 등) 연간단가 사업)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35099416" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강남구" data-search="서울특별시 강남구 강남구 도시환경국 공원녹지과 2026년 가로수보호판 정비사업 추진계획 — ">
+  <td class="idx">202</td><td class="region">서울특별시 강남구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-01-08</td>
+  <td class="title">2026년 가로수보호판 정비사업 추진계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35204987" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 재정경제국 재무과 2026년 일상경비 운영계획 — ">
+  <td class="idx">203</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-01-12</td>
+  <td class="title">2026년 일상경비 운영계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35222666" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 도시관리국 공원녹지과 - 가로수 유지관리(띠녹지 정비 등) - 연간단가 사업 추진계획 — ">
+  <td class="idx">204</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-01-14</td>
+  <td class="title">- 가로수 유지관리(띠녹지 정비 등) - 연간단가 사업 추진계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35240576" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 도시관리국 공원녹지과 2026년 가로수 유지관리(띠녹지 정비 등) 연간단가 사업 시행 — ">
+  <td class="idx">205</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-01-30</td>
+  <td class="title">2026년 가로수 유지관리(띠녹지 정비 등) 연간단가 사업 시행</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35354824" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 기획경제국 재무과 공사 전자공개 수의계약 안내 공고[2026년 가로수 유지관리(띠녹지 정비 등) 연간단가 사업] — ">
+  <td class="idx">206</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-02-03</td>
+  <td class="title">공사 전자공개 수의계약 안내 공고[2026년 가로수 유지관리(띠녹지 정비 등) 연간단가 사업]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35379705" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 성북구" data-search="서울특별시 성북구 성북구 기획재정국 기획예산과 - 정책·데이터 중심의 구정 홍보지 - 2026년 1분기 정책매거진 제작 보고 — ">
+  <td class="idx">207</td><td class="region">서울특별시 성북구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-02-09</td>
+  <td class="title">- 정책·데이터 중심의 구정 홍보지 - 2026년 1분기 정책매거진 제작 보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35421005" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 강동구" data-search="서울특별시 강동구 강동구 기획경제국 기획예산과 2026년 강동구 주민참여예산 운영계획 — ">
+  <td class="idx">208</td><td class="region">서울특별시 강동구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-02-13</td>
+  <td class="title">2026년 강동구 주민참여예산 운영계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35464892" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 중구" data-search="서울특별시 중구 중구 도시관리국 공원녹지과 - 재난·사고대비 위험가로수 정비 임목 부산물 수집·운반 용역 -설 계 변 경  검 토 보 고 위험가로 ">
+  <td class="idx">209</td><td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">위험가로</td><td class="period">2026-03-19</td>
+  <td class="title">- 재난·사고대비 위험가로수 정비 임목 부산물 수집·운반 용역 -설 계 변 경  검 토 보 고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35698381" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서대문구 교육문화체육국 교육지원과 2026년 교육경비보조금 지급(홍제초) — ">
+  <td class="idx">210</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-03-24</td>
+  <td class="title">2026년 교육경비보조금 지급(홍제초)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35721976" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 용산구" data-search="서울특별시 용산구 용산구 행정지원국 교육지원과 - 학교·유치원·학력인정 평생교육시설 -2026년도 용산구 친환경 급식 지원 계획 학교 ">
+  <td class="idx">211</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">학교</td><td class="period">2026-03-30</td>
+  <td class="title">- 학교·유치원·학력인정 평생교육시설 -2026년도 용산구 친환경 급식 지원 계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35762931" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 강북구" data-search="서울특별시 강북구 강북구 도시관리국 주거정비과 미아동 258번지 일대 정비계획 결정 및 정비구역 지정(안) 재공람공고 — ">
+  <td class="idx">212</td><td class="region">서울특별시 강북구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-04-07</td>
+  <td class="title">미아동 258번지 일대 정비계획 결정 및 정비구역 지정(안) 재공람공고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35834984" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 용산구" data-search="서울특별시 용산구 용산구 안전건설교통국 치수과 『집중호우 대비 부서 간 협업을 통한』빗물받이 관리 개선계획 — ">
+  <td class="idx">213</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-04-10</td>
+  <td class="title">『집중호우 대비 부서 간 협업을 통한』빗물받이 관리 개선계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35864184" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 서대문구" data-search="서울특별시 서대문구 서대문구 안전건설국 도로과 구청장에 바란다 민원사항 처리결과 회신(홍제초교 통학로) 홍제초교, 통학로 ">
+  <td class="idx">214</td><td class="region">서울특별시 서대문구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">홍제초교, 통학로</td><td class="period">2026-04-10</td>
+  <td class="title">구청장에 바란다 민원사항 처리결과 회신(홍제초교 통학로)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35864438" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 서초구" data-search="서울특별시 서초구 서초구 문화행정국 체육진흥과 반포종합운동장 등 직영체육시설 제초 및 예초 작업 계획 — ">
+  <td class="idx">215</td><td class="region">서울특별시 서초구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-04-27</td>
+  <td class="title">반포종합운동장 등 직영체육시설 제초 및 예초 작업 계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/35977640" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 용산구" data-search="서울특별시 용산구 용산구 안전건설교통국 치수과 『집중호우 대비 부서 간 협업을 통한』빗물받이 관리 개선계획 — ">
+  <td class="idx">216</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-04-30</td>
+  <td class="title">『집중호우 대비 부서 간 협업을 통한』빗물받이 관리 개선계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36008933" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 광진구" data-search="서울특별시 광진구 광진구 의회사무국 의결안 이송(제290회 광진구의회 임시회) — ">
+  <td class="idx">217</td><td class="region">서울특별시 광진구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-04-30</td>
+  <td class="title">의결안 이송(제290회 광진구의회 임시회)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36009203" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 종로구" data-search="서울특별시 종로구 종로구 기획경제국 기획예산과 민선8기 공약 이행상황 보고 (2026년 1분기) — ">
+  <td class="idx">218</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-05-06</td>
+  <td class="title">민선8기 공약 이행상황 보고 (2026년 1분기)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36056873" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 서초구" data-search="서울특별시 서초구 서초구 공간혁신국 정원여가과 가로녹지대 예초 용역 시행 — ">
+  <td class="idx">219</td><td class="region">서울특별시 서초구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-05-14</td>
+  <td class="title">가로녹지대 예초 용역 시행</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36099661" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 용산구" data-search="서울특별시 용산구 용산구 기획조정실 기획예산담당관 2026년도 세입·세출예산 제10차 간주처리 — ">
+  <td class="idx">220</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-05-22</td>
+  <td class="title">2026년도 세입·세출예산 제10차 간주처리</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36157841" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 금천구" data-search="서울특별시 금천구 금천소방서 재난관리과 금천구 관내 보도정비 및 도로시설물 공사 시행 알림 — ">
+  <td class="idx">221</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-02</td>
+  <td class="title">금천구 관내 보도정비 및 도로시설물 공사 시행 알림</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36222778" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 종로구" data-search="서울특별시 종로구 종로구 도시관리국 도시녹지과 환기미술관 옆 은행나무 제초제 피해 관련 조치계획 — ">
+  <td class="idx">222</td><td class="region">서울특별시 종로구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-04</td>
+  <td class="title">환기미술관 옆 은행나무 제초제 피해 관련 조치계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36239793" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 건설안전국 도로과 - 2026년 시도상 보도 정비공사(연간단가) -설계변경(제1회) 시행계획 검토보고 — ">
+  <td class="idx">223</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-04</td>
+  <td class="title">- 2026년 시도상 보도 정비공사(연간단가) -설계변경(제1회) 시행계획 검토보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36239703" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 성동구" data-search="서울특별시 성동구 성동구 안전건설교통국 토목과 설계변경(1회) 시행 검토보고[2026년 보도유지 공사 건설폐기물 처리용역(단가계약)] — ">
+  <td class="idx">224</td><td class="region">서울특별시 성동구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-05</td>
+  <td class="title">설계변경(1회) 시행 검토보고[2026년 보도유지 공사 건설폐기물 처리용역(단가계약)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36261295" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 동대문구" data-search="서울특별시 동대문구 동대문구 건설안전국 도로과 설계변경(1회) 시행[2026년 시도상 보도 정비공사(연간단가)] — ">
+  <td class="idx">225</td><td class="region">서울특별시 동대문구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-08</td>
+  <td class="title">설계변경(1회) 시행[2026년 시도상 보도 정비공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36261154" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 서초구" data-search="서울특별시 서초구 서초구 공간혁신국 정원여가과 하천녹지 유지관리 물품(예초기 등) 구매계획 — ">
+  <td class="idx">226</td><td class="region">서울특별시 서초구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-08</td>
+  <td class="title">하천녹지 유지관리 물품(예초기 등) 구매계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36261504" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강남구" data-search="서울특별시 강남구 강남구 도시환경국 공원녹지과 2026년 위험 가로수 정비공사 추진계획 — ">
+  <td class="idx">227</td><td class="region">서울특별시 강남구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-08</td>
+  <td class="title">2026년 위험 가로수 정비공사 추진계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36261772" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 동작구" data-search="서울특별시 동작구 동작구 도시교통국 도로관리과 노량진수산시장 지하보도 환경개선공사 시행계획 — ">
+  <td class="idx">228</td><td class="region">서울특별시 동작구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-10</td>
+  <td class="title">노량진수산시장 지하보도 환경개선공사 시행계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36281939" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강남구" data-search="서울특별시 강남구 강남구 도시환경국 공원녹지과 2026년 위험 가로수 정비공사 추진계획(수정) — ">
+  <td class="idx">229</td><td class="region">서울특별시 강남구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-10</td>
+  <td class="title">2026년 위험 가로수 정비공사 추진계획(수정)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36281853" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 성동구" data-search="서울특별시 성동구 성동구 안전건설교통국 토목과 『2026년 보도 유지보수 공사(단가계약)』 기성검사(1회) 결과 보고 — ">
+  <td class="idx">230</td><td class="region">서울특별시 성동구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-12</td>
+  <td class="title">『2026년 보도 유지보수 공사(단가계약)』 기성검사(1회) 결과 보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36311864" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="maintenance" data-impact="0" data-region="서울특별시 강동구" data-search="서울특별시 강동구 강동구 건설교통국 푸른도시과 둔촌동역 주변 노후보도 정비공사 관련 조경공사(가로수 정비) 추진계획 — ">
+  <td class="idx">231</td><td class="region">서울특별시 강동구</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span><div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td><td class="period">2026-06-15</td>
+  <td class="title">둔촌동역 주변 노후보도 정비공사 관련 조경공사(가로수 정비) 추진계획</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36312193" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 중랑구" data-search="서울특별시 중랑구 중랑구 안전건설교통국 도로과 설계변경(1회) 및 낙찰차액 사용계획 검토보고「2026년 보도정비공사(연간단가) 외 1」 — ">
+  <td class="idx">232</td><td class="region">서울특별시 중랑구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-16</td>
+  <td class="title">설계변경(1회) 및 낙찰차액 사용계획 검토보고「2026년 보도정비공사(연간단가) 외 1」</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36321732" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 중랑구" data-search="서울특별시 중랑구 중랑구 안전건설교통국 도로과 설계변경(1회)시행 (2026년 보도정비공사-연간단가) — ">
+  <td class="idx">233</td><td class="region">서울특별시 중랑구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-17</td>
+  <td class="title">설계변경(1회)시행 (2026년 보도정비공사-연간단가)</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36331746" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 용산구" data-search="서울특별시 용산구 용산구 안전건설교통국 도로과 「2026년 관내 보도 유지보수 공사(연간단가)」설계변경(1회) 검토 보고 — ">
+  <td class="idx">234</td><td class="region">서울특별시 용산구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-18</td>
+  <td class="title">「2026년 관내 보도 유지보수 공사(연간단가)」설계변경(1회) 검토 보고</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36341057" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 강서구" data-search="서울특별시 강서구 강서구 안전교통국 도로과 2026년 관내 보도 정비공사(연간단가) 설계변경(1회) 시행 — ">
+  <td class="idx">235</td><td class="region">서울특별시 강서구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-18</td>
+  <td class="title">2026년 관내 보도 정비공사(연간단가) 설계변경(1회) 시행</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36346189" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 중랑구" data-search="서울특별시 중랑구 중랑구 안전건설교통국 도로과 기성검사(감독)조서(1차)[2026년 보도정비공사(연간단가)] — ">
+  <td class="idx">236</td><td class="region">서울특별시 중랑구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">기성검사(감독)조서(1차)[2026년 보도정비공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36346262" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울특별시 금천구" data-search="서울특별시 금천구 금천구 교통건설국 도로과 설계변경(1회) 시행[2026년 관내 보도정비공사(연간단가)] — ">
+  <td class="idx">237</td><td class="region">서울특별시 금천구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-19</td>
+  <td class="title">설계변경(1회) 시행[2026년 관내 보도정비공사(연간단가)]</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36351111" target="_blank" rel="noopener">원문</a></td></tr>
+<tr data-cat="etc" data-impact="0" data-region="서울시 본청/사업소" data-search="서울시 본청/사업소 건설기술정책관 기술심사담당관 안전관리계획서 사본 및 검토결과 제출 방법 안내 — ">
+  <td class="idx">238</td><td class="region">서울시 본청/사업소</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span><div class="badge imp-low">관련 문서</div></td>
+  <td class="loc">—</td><td class="period">2026-06-20</td>
+  <td class="title">안전관리계획서 사본 및 검토결과 제출 방법 안내</td>
+  <td class="src"><a href="https://opengov.seoul.go.kr/sanction/36350608" target="_blank" rel="noopener">원문</a></td></tr></tbody></table>
+<p class="note">※ 결재문서 원문공개 기반. 첨부 본문은 기관 다운로드 제한으로 자동수집 불가 → ‘통제’가 비면 원문 확인 필요. 분류/도로/기간은 제목·공식분류 기반 자동추출(검증 전).</p></div>
+<script>
+const q=document.getElementById('q'),reg=document.getElementById('reg'),rows=[...document.querySelectorAll('#tbl tbody tr')];let f='all';
+function apply(){const t=q.value.trim().toLowerCase(),rg=reg.value;rows.forEach(r=>{
+ let ok=true;if(f==='impact')ok=r.dataset.impact==='1';else if(f.startsWith('cat:'))ok=r.dataset.cat===f.slice(4);
+ const okr=rg==='all'||r.dataset.region===rg,okt=!t||(r.dataset.search||'').includes(t);
+ r.style.display=(ok&&okr&&okt)?'':'none';});}
+q.addEventListener('input',apply);reg.addEventListener('change',apply);
+document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));b.classList.add('on');f=b.dataset.f;apply();}));
+</script></body></html>

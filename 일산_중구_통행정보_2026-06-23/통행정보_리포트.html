@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>일산·중구 통행·생활 공고 모니터</title>
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--line:#e3e8ef;--ink:#1f2937;--mut:#6b7280;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:"Malgun Gothic","Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);}
+header{background:linear-gradient(135deg,#0f172a,#1f3a5f);color:#fff;padding:26px 30px 22px;}
+header h1{margin:0 0 6px;font-size:23px;} header p{margin:3px 0;color:#cbd5e1;font-size:13px;}
+.wrap{padding:20px 30px 44px;}
+.pills{display:flex;gap:12px;flex-wrap:wrap;margin:-40px 0 14px;}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:104px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.pill b{display:block;font-size:24px;} .pill span{font-size:12px;color:var(--mut);}
+.catbar{margin:6px 0 12px;color:var(--mut);font-size:12px;}
+.catpill{display:inline-block;margin:3px 6px 3px 0;padding:3px 9px;border-radius:20px;font-size:12px;color:#fff;background:var(--c);}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 14px;}
+#q{flex:1;min-width:220px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;}
+.fbtn{border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 13px;font-size:13px;cursor:pointer;color:#374151;}
+.fbtn em{font-style:normal;color:#9ca3af;} .fbtn.on{background:#0f172a;color:#fff;border-color:#0f172a;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+th,td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px;line-height:1.5;}
+th{position:sticky;top:0;background:#eef2f7;color:#374151;font-size:12px;z-index:2;}
+tr:hover td{background:#f8fafc;}
+.idx{color:#9ca3af;text-align:right;width:34px;} .region{font-weight:700;min-width:120px;}
+.cat{display:inline-block;padding:3px 8px;border-radius:6px;background:var(--c);color:#fff;font-size:12px;white-space:nowrap;}
+.badge{margin-top:5px;font-size:11px;font-weight:700;}
+.imp-high{color:#b91c1c;} .imp-mid{color:#b45309;} .imp-low{color:#6b7280;}
+.loc{min-width:120px;} .period{font-weight:700;color:#0f5132;min-width:120px;} .period.miss{color:#9a3412;font-weight:600;}
+.title{min-width:280px;} .kw{color:#94a3b8;font-size:11px;margin-top:3px;}
+.src a{color:#1d4ed8;text-decoration:none;font-weight:600;}
+.empty{text-align:center;padding:30px;color:#9ca3af;} .note{margin-top:14px;font-size:12px;color:#94a3b8;}
+@media(max-width:880px){.wrap{padding:12px} table{display:block;overflow-x:auto} th,td{min-width:120px}}
+</style></head>
+<body>
+<header>
+  <h1>🚧 일산·중구 통행·생활 공고 모니터</h1>
+  <p>고양시(일산)·서울 중구의 고시·공고 게시판을 직접 수집해 도로공사·예초·상하수도·점용·행사 등 통행/보행 영향 가능 정보를 추렸습니다.</p>
+  <p>생성: 2026-06-23 12:52 · 분류·구간·기간은 제목 기반 자동추출(검증 전) · 상세는 원문 확인</p>
+</header>
+<div class="wrap">
+  <div class="pills"><div class="pill"><b>20</b><span>총 공고</span></div><div class="pill"><b>1</b><span>통행영향 후보</span></div><div class="pill"><b>2</b><span>지역</span></div><div class="pill"><b>20</b><span>기간 확인</span></div></div>
+  <div class="catbar">분류 분포: <span class="catpill" style="--c:#6b7280">기타 17</span><span class="catpill" style="--c:#b91c1c">도로공사/굴착/포장/보수 1</span><span class="catpill" style="--c:#15803d">예초/제초/가로수/방제/제설 1</span><span class="catpill" style="--c:#7c3aed">축제/행사/장날/집회 1</span></div>
+  <div class="tools">
+    <input id="q" placeholder="🔎 지역·도로·제목 검색…">
+    <button class="fbtn on" data-f="all">전체</button><button class="fbtn" data-f="impact">통행영향만</button><button class="fbtn" data-f="cat:etc" style="--c:#6b7280">기타 <em>17</em></button><button class="fbtn" data-f="cat:road" style="--c:#b91c1c">도로공사/굴착/포장/보수 <em>1</em></button><button class="fbtn" data-f="cat:maintenance" style="--c:#15803d">예초/제초/가로수/방제/제설 <em>1</em></button><button class="fbtn" data-f="cat:event" style="--c:#7c3aed">축제/행사/장날/집회 <em>1</em></button>
+  </div>
+  <table id="tbl">
+    <thead><tr><th class="idx">#</th><th>지역</th><th>분류/영향</th><th>도로·구간</th><th>기간</th><th>제목</th><th>출처</th></tr></thead>
+    <tbody><tr data-cat="road" data-impact="1" data-search="서울특별시 중구 시청역 일대 외 1개소 원형관로 보강공사 외 2건 특정기술(신기술·공법) 선정 최종 결과 공고 원형관로 도로공사/굴착/포장/보수">
+  <td class="idx">1</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#b91c1c">도로공사/굴착/포장/보수</span>
+      <div class="badge imp-high">통행영향 가능</div></td>
+  <td class="loc">원형관로</td>
+  <td class="period">2026-06-18 ~ 2026-06-25</td>
+  <td class="title">시청역 일대 외 1개소 원형관로 보강공사 외 2건 특정기술(신기술·공법) 선정 최종 결과 공고</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1455084773" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="maintenance" data-impact="0" data-search="경기도 고양시(일산) [교육발전특구 x 중부대] 전국 청소년 영상 공모전 (2026 goyang youth media contest) — 예초/제초/가로수/방제/제설">
+  <td class="idx">2</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#15803d">예초/제초/가로수/방제/제설</span>
+      <div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-11</td>
+  <td class="title">[교육발전특구 x 중부대] 전국 청소년 영상 공모전 (2026 GOYANG Youth Media Contest)</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260611094254506" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="event" data-impact="0" data-search="서울특별시 중구 소유자불명 무단방치 이륜차 자진처리명령 공시송달 및 강제처리(폐차) 이해관계인 권리행사 공고 — 축제/행사/장날/집회">
+  <td class="idx">3</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#7c3aed">축제/행사/장날/집회</span>
+      <div class="badge imp-mid">생활영향</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-23 ~ 2026-07-23</td>
+  <td class="title">소유자불명 무단방치 이륜차 자진처리명령 공시송달 및 강제처리(폐차) 이해관계인 권리행사 공고</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1455961470" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="서울특별시 중구 세운재정비촉진지구 6-4-22,23구역 재정비촉진계획(변경) 결정(안) 주민 공청회 개최 공고 — 기타">
+  <td class="idx">4</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-22 ~ 2026-07-06</td>
+  <td class="title">세운재정비촉진지구 6-4-22,23구역 재정비촉진계획(변경) 결정(안) 주민 공청회 개최 공고</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1455514747" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="서울특별시 중구 정동길, 남대문로1길 일대 옥외광고물 개선사업 정비시범구역 지정 및 표시제한.완화 고시(안)행정예고 정동길, 남대문로1길, 남대문로 기타">
+  <td class="idx">5</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">정동길, 남대문로1길, 남대문로</td>
+  <td class="period">2026-06-22 ~ 2026-07-13</td>
+  <td class="title">정동길, 남대문로1길 일대 옥외광고물 개선사업 정비시범구역 지정 및 표시제한.완화 고시(안)행정예고</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1455484299" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="서울특별시 중구 도로법 위반에 따른 과태료 독촉고지서 반송분 공시송달 공고 — 기타">
+  <td class="idx">6</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-19 ~ 2026-07-03</td>
+  <td class="title">도로법 위반에 따른 과태료 독촉고지서 반송분 공시송달 공고</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1455146757" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="서울특별시 중구 도로법 위반에 따른 과태료 부과고지서 반송분 공시송달 공고 — 기타">
+  <td class="idx">7</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-19 ~ 2026-07-03</td>
+  <td class="title">도로법 위반에 따른 과태료 부과고지서 반송분 공시송달 공고</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1455132617" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) 전남광주통합특별시 출범에 따른 일부 민원서비스 일시중단 안내(정부24,무인민원발급기 등) — 기타">
+  <td class="idx">8</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-23</td>
+  <td class="title">전남광주통합특별시 출범에 따른 일부 민원서비스 일시중단 안내(정부24,무인민원발급기 등)</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260623100541645" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) 2026년 6월 이달의 모범시민 홍보 — 기타">
+  <td class="idx">9</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-22</td>
+  <td class="title">2026년 6월 이달의 모범시민 홍보</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260622211558114" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) 🛩️ (고양시&amp;한국항공대) 고양시민 기후테크 아카데미 학습자 모집 — 기타">
+  <td class="idx">10</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-19</td>
+  <td class="title">🛩️ (고양시&amp;한국항공대) 고양시민 기후테크 아카데미 학습자 모집</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260619193609114" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) [고양시 교육발전특구] 한국항공대 미래 진로 체험 「고양항공잡월드」 참가자 모집(초·중·고 대상) — 기타">
+  <td class="idx">11</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-18</td>
+  <td class="title">[고양시 교육발전특구] 한국항공대 미래 진로 체험 「고양항공잡월드」 참가자 모집(초·중·고 대상)</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260618185932416" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) 2026년 경기도 평생교육이용권 사용기관 등록 안내 — 기타">
+  <td class="idx">12</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-18</td>
+  <td class="title">2026년 경기도 평생교육이용권 사용기관 등록 안내</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260618160424530" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) 2026년 여름방학 대학생 행정체험 연수 1차 선발자 명단 공고 — 기타">
+  <td class="idx">13</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-15</td>
+  <td class="title">2026년 여름방학 대학생 행정체험 연수 1차 선발자 명단 공고</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260615170336869" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) 킨텍스 소셜브릿지 마켓 운영 — 기타">
+  <td class="idx">14</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-15</td>
+  <td class="title">킨텍스 소셜브릿지 마켓 운영</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260615104817473" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) 2026년 야생동물 피해예방시설 설치 신청자 접수 — 기타">
+  <td class="idx">15</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-11</td>
+  <td class="title">2026년 야생동물 피해예방시설 설치 신청자 접수</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260611104849396" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="경기도 고양시(일산) gh-홈파트너 소규모 집수리 지원사업 대상모집 — 기타">
+  <td class="idx">16</td>
+  <td class="region">경기도 고양시(일산)</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-10</td>
+  <td class="title">GH-홈파트너 소규모 집수리 지원사업 대상모집</td>
+  <td class="src"><a href="https://www.goyang.go.kr/www/user/bbs/BD_selectBbs.do?q_bbsCode=1030&amp;q_bbscttSn=20260610162152947" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="서울특별시 중구 위반(무허가)건축물 시정명령 전 사전통지 통보 공시송달 공고(제2026-696호) — 기타">
+  <td class="idx">17</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-23 ~ 2026-07-08</td>
+  <td class="title">위반(무허가)건축물 시정명령 전 사전통지 통보 공시송달 공고(제2026-696호)</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1456092703" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="서울특별시 중구 위반(무허가)건축물 2차 시정명령 통보 공시송달 공고(제2026-695호) — 기타">
+  <td class="idx">18</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-23 ~ 2026-07-08</td>
+  <td class="title">위반(무허가)건축물 2차 시정명령 통보 공시송달 공고(제2026-695호)</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1456085555" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="서울특별시 중구 모아타운 관리계획 주민제안 전자동의 지원사업 대상지 수시 공모 알림 — 기타">
+  <td class="idx">19</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-22 ~ 2026-12-15</td>
+  <td class="title">모아타운 관리계획 주민제안 전자동의 지원사업 대상지 수시 공모 알림</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=145582302" target="_blank" rel="noopener">원문 열기</a></td>
+</tr>
+<tr data-cat="etc" data-impact="0" data-search="서울특별시 중구 서울중구가족센터 위수탁 협약체결 공고 — 기타">
+  <td class="idx">20</td>
+  <td class="region">서울특별시 중구</td>
+  <td><span class="cat" style="--c:#6b7280">기타</span>
+      <div class="badge imp-low">정보/공고</div></td>
+  <td class="loc">—</td>
+  <td class="period">2026-06-19 ~ 2026-07-03</td>
+  <td class="title">서울중구가족센터 위수탁 협약체결 공고</td>
+  <td class="src"><a href="https://www.junggu.seoul.kr/content.do?cmsid=14232&amp;mode=view&amp;cid=1455245343" target="_blank" rel="noopener">원문 열기</a></td>
+</tr></tbody>
+  </table>
+  <p class="note">※ 고시·공고 게시판은 행정 공고가 많아, 통행과 무관한 항목도 포함됩니다. ‘통행영향만’ 필터로 도로/점용/상수도 관련만 볼 수 있습니다.
+     실제 통행 영향·기간·구간은 반드시 원문(및 첨부 공고문)으로 확인하세요.</p>
+</div>
+<script>
+const q=document.getElementById('q'), rows=[...document.querySelectorAll('#tbl tbody tr')];
+let f='all';
+function apply(){
+  const t=q.value.trim().toLowerCase();
+  rows.forEach(r=>{
+    let ok=true;
+    if(f==='impact') ok = r.dataset.impact==='1';
+    else if(f.startsWith('cat:')) ok = r.dataset.cat===f.slice(4);
+    const okt=!t||(r.dataset.search||'').includes(t);
+    r.style.display=(ok&&okt)?'':'none';
+  });
+}
+q.addEventListener('input',apply);
+document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); f=b.dataset.f; apply();
+}));
+</script>
+</body></html>
