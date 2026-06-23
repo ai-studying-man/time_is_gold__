@@ -236,14 +236,22 @@ function systemNotify(e,dist){
 /* ---------- 텔레그램 푸시 ---------- */
 function sendTelegram(e,dist){
   if(!CONFIG.telegramEnabled || !$('telegram').checked) return;
-  const text =
-    `🚧 <b>${esc(e.title||e.eventType||'공사')}</b>\n`+
-    `전방 ${dist}m · ${esc(e.controlType||'')} (${esc(e.eventType||'')})\n`+
-    `📅 ${esc(fmtRange(e))}\n`+
-    `📍 ${esc(e.roadName||e.location||'')}\n`+
-    `🏛 ${esc(e.agency||'')}`+
-    (e.sourceUrl?`\n🔗 ${esc(e.sourceUrl)}`:'');
-  fetch('/api/notify',{ method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({ text }) })
+  const event = {
+    id: e.id,
+    title: e.title,
+    eventType: e.eventType,
+    controlType: e.controlType,
+    rawDateText: e.rawDateText,
+    startDate: e.startDate,
+    endDate: e.endDate,
+    timeText: e.timeText,
+    roadName: e.roadName,
+    location: e.location,
+    agency: e.agency,
+    authority: e.authority,
+    sourceUrl: e.sourceUrl
+  };
+  fetch('/api/notify',{ method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({ event, distanceMeters: dist }) })
     .then(r=>r.json()).then(d=>{ if(!d.ok) console.warn('telegram notify 실패',d); })
     .catch(err=>console.warn('telegram notify 오류',err));
 }
