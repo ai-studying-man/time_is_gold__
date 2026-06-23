@@ -5,8 +5,7 @@
   "description": "지자체 소규모 공사/도로통제 사전·근접 알림 앱 (Kakao Map + Telegram + TTS)",
   "scripts": {
     "dev": "vercel dev",
-    "start": "vercel dev",
-    "test": "node --test"
+    "start": "vercel dev"
   },
   "engines": { "node": ">=18" }
 }

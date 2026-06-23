@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>지자체 공사 알림</title>
+<title>거북이 안전길잡이</title>
 <!-- Leaflet: Kakao 키가 없을 때의 폴백 지도용 -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
@@ -28,6 +28,8 @@
   #topbar .badge.warn { background:#fff4e5; color:#b26a00; }
   #topbar .badge.ok { background:#e8f5e9; color:var(--green); }
   #clock { font-variant-numeric:tabular-nums; }
+  /* 상업용 화면: 상단은 앱 이름만 노출. 시계/데이터/지도/진행중/배지는 숨김(요소는 남겨 app.js 참조 유지) */
+  #topbar > span:not(.title){ display:none !important; }
 
   #controls {
     position:absolute; left:12px; bottom:calc(12px + var(--safe-b)); z-index:1000;
@@ -49,6 +51,17 @@
   #controls label.chk.disabled { opacity:.45; }
   #controls .speed { display:flex; align-items:center; gap:8px; }
   #controls input[type=range]{ flex:1; height:28px; }
+  .tabs{ display:flex; gap:6px; }
+  .tab{ flex:1; border:0; border-radius:10px; padding:10px; font-weight:800; cursor:pointer; background:#eceff1; color:#607d8b; min-height:44px; font-size:calc(13px*var(--fs)); }
+  .tab.on{ background:var(--blue); color:#fff; }
+  .hint{ color:#777; font-size:calc(11px*var(--fs)); line-height:1.5; }
+  /* 컨트롤 패널 접기/펼치기 — 네이티브 <details>, JS 불필요 */
+  #controls details > summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+    font-weight:800; color:#37474f; font-size:calc(13px*var(--fs)); padding:2px 2px 0; min-height:34px; user-select:none; }
+  #controls details > summary::-webkit-details-marker{ display:none; }
+  #controls details > summary .tg{ color:#90a4ae; transition:transform .15s; }
+  #controls details:not([open]) > summary .tg{ transform:rotate(-90deg); }
+  #controls .ctrl-body{ display:flex; flex-direction:column; gap:8px; margin-top:8px; }
   .legend { display:flex; flex-wrap:wrap; gap:4px 12px; }
   .legend span{ display:inline-flex; align-items:center; gap:5px; }
   .dot{ width:11px; height:11px; border-radius:50%; display:inline-block; }
@@ -84,13 +97,26 @@
   .arrow-inner { font-size:32px; line-height:1; color:var(--blue); text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 7px #fff; transition:transform .12s linear; transform-origin:50% 50%; }
   .leaflet-popup-content { font-size:calc(13px*var(--fs)); }
 
+  /* 검색 / 길찾기 */
+  #searchwrap{ position:absolute; top:calc(48px + env(safe-area-inset-top)); left:12px; z-index:1050; width:min(340px,calc(100vw - 24px)); display:flex; flex-direction:column; gap:6px; }
+  #searchbar{ display:flex; gap:6px; background:rgba(255,255,255,.96); padding:8px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.2); }
+  #searchbar input{ flex:1; min-width:0; border:1px solid #ddd; border-radius:8px; padding:10px; font-size:calc(13px*var(--fs)); min-height:44px; }
+  #searchbar button{ min-height:44px; flex:0 0 auto; min-width:48px; padding:8px 10px; }
+  #routebox{ display:none; flex-direction:column; gap:6px; background:rgba(255,255,255,.97); padding:10px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.2); }
+  #routebox input{ border:1px solid #ddd; border-radius:8px; padding:10px; font-size:calc(13px*var(--fs)); min-height:44px; }
+  #routeInfo{ font-size:calc(12px*var(--fs)); line-height:1.5; }
+  .rhit{ padding:5px 0; border-top:1px solid #eee; }
+  .rbadge{ font-weight:800; padding:1px 7px; border-radius:8px; color:#fff; font-size:calc(11px*var(--fs)); background:#607d8b; }
+  .rbadge.detour{ background:#d32f2f; } .rbadge.slow{ background:#f9a825; color:#3a2e00; } .rbadge.caution{ background:#607d8b; }
+
   .empty-warn{ position:absolute; inset:0; z-index:1200; display:none; align-items:center; justify-content:center; background:rgba(255,255,255,.92); text-align:center; padding:20px; }
 
   @media (max-width:720px) {
     #topbar { gap:4px 8px; padding:7px 10px; }
     #topbar .sep { display:none; }
-    #controls { left:8px; right:8px; bottom:calc(8px + var(--safe-b)); width:auto; max-width:none; padding:10px; max-height:62vh; overflow:auto; }
-    #panel { left:8px; right:8px; bottom:auto; top:calc(50px + env(safe-area-inset-top)); width:auto; max-height:36vh; }
+    #controls { left:8px; right:8px; bottom:calc(8px + var(--safe-b)); width:auto; max-width:none; padding:10px; max-height:52vh; overflow:auto; }
+    #panel { display:none; }   /* 모바일에서는 목록 패널 숨김(알림은 토스트/TTS/시스템알림) */
+    #searchwrap { left:8px; right:8px; width:auto; }
     .toast h3, .toast .dates { font-size:calc(17px*var(--fs)); }
   }
 </style>
@@ -99,7 +125,7 @@
 <div id="map"></div>
 
 <div id="topbar">
-  <span class="title">🚧 공사 알림</span>
+  <span class="title">🐢 거북이 안전길잡이</span>
   <span class="sep">|</span>
   <span id="clock"></span>
   <span class="sep">|</span>
@@ -110,13 +136,32 @@
   <span id="modeBadge" class="badge warn" style="display:none">실제 GPS</span>
 </div>
 
+<div id="searchwrap">
+  <div id="searchbar">
+    <input id="q" type="search" placeholder="장소 검색 (예: 서울시청)" aria-label="장소 검색" />
+    <button id="btnSearch" class="btn" aria-label="검색">검색</button>
+    <button id="btnRouteMode" class="btn secondary" aria-label="길찾기 열기" title="길찾기">길찾기</button>
+  </div>
+  <div id="routebox">
+    <input id="qFrom" type="search" placeholder="출발지 (비우면 현재 화살표 위치)" aria-label="출발지" />
+    <input id="qTo" type="search" placeholder="도착지" aria-label="도착지" />
+    <div style="display:flex; gap:6px">
+      <button id="btnRoute" class="btn" style="flex:1">길찾기 (최단·공사회피)</button>
+      <button id="btnRouteClear" class="btn secondary">지우기</button>
+    </div>
+    <div id="routeInfo"></div>
+  </div>
+</div>
+
 <div id="toasts" role="region" aria-live="assertive" aria-label="공사 진입 알림"></div>
 
 <div id="controls">
-  <div class="row">
-    <button id="btnSim" class="btn">▶ 시뮬 주행</button>
-    <button id="btnReset" class="btn secondary">⟲ 처음</button>
-    <button id="btnGps" class="btn secondary">📍 GPS</button>
+  <details id="ctrlPanel" open>
+  <summary class="ctrlhead">⚙️ 메뉴 · 설정 <span class="tg">▾</span></summary>
+  <div class="ctrl-body">
+  <div class="tabs" role="tablist">
+    <button id="tabService" class="tab on" role="tab" aria-selected="true">🗺 서비스</button>
+    <button id="tabDemo" class="tab" role="tab" aria-selected="false">🧪 데모 시연</button>
   </div>
 
   <div class="grp">
@@ -130,22 +175,28 @@
   </div>
 
   <div class="grp">
-    <div class="speed">속도 <input id="speed" type="range" min="1" max="20" value="6" aria-label="시뮬 주행 속도"><span id="speedVal">6</span></div>
-    <label class="chk"><input type="checkbox" id="follow" checked> 화살표 따라가기</label>
-    <label class="chk"><input type="checkbox" id="ignoreDates" checked> 데모: 모든 공사 활성 취급</label>
-    <label class="chk"><input type="checkbox" id="sound"> 알림 효과음</label>
-    <label class="chk"><input type="checkbox" id="tts" checked> 🔊 음성 안내 (TTS)</label>
-    <label class="chk" id="appnotifWrap"><input type="checkbox" id="appnotif"> 🔔 시스템 알림 (앱 자체)</label>
+    <label class="chk"><input type="checkbox" id="audio" checked> 🔊 음성·소리 알림</label>
+    <label class="chk" id="appnotifWrap"><input type="checkbox" id="appnotif"> 🔔 시스템 알림</label>
     <label class="chk" id="telegramWrap"><input type="checkbox" id="telegram"> ✈ 텔레그램 푸시</label>
+    <label class="chk"><input type="checkbox" id="follow" checked> 내 위치 따라가기</label>
+    <label class="chk"><input type="checkbox" id="ignoreDates" checked> 날짜 무관 표시(데이터 보정)</label>
   </div>
 
-  <div class="grp">
-    <div class="grp-title">🧪 데모 시연 — 화살표 이동</div>
-    <label class="chk"><input type="checkbox" id="tapMove"> 🎯 지도를 탭하면 화살표 이동</label>
-    <div style="color:#777; font-size:calc(11px*var(--fs)); line-height:1.5">
-      화살표를 직접 <b>드래그(모바일은 손가락 터치)</b>해서 옮길 수 있습니다.
-      공사 알림범위에 들어가면 알림이 울립니다.
+  <!-- 서비스 모드 전용 -->
+  <div class="grp modeService">
+    <button id="btnGps" class="btn secondary" style="width:100%">📍 실제 GPS로 내 위치 표시</button>
+  </div>
+
+  <!-- 데모 시연 모드 전용 -->
+  <div class="grp modeDemo" style="display:none">
+    <div class="grp-title">🧪 데모 시연 — 화살표 주행</div>
+    <div class="row">
+      <button id="btnSim" class="btn">▶ 주행 시작</button>
+      <button id="btnReset" class="btn secondary">⟲ 처음</button>
     </div>
+    <div class="speed">속도 <input id="speed" type="range" min="1" max="20" value="6" aria-label="주행 속도"><span id="speedVal">6</span></div>
+    <label class="chk"><input type="checkbox" id="tapMove"> 🎯 지도를 탭하면 화살표 이동</label>
+    <div class="hint">화살표를 직접 <b>드래그(모바일은 터치)</b>해서 옮길 수도 있습니다.</div>
   </div>
 
   <div class="grp legend">
@@ -153,10 +204,11 @@
     <span><span class="dot" style="background:#f9a825"></span>예정</span>
     <span><span class="dot" style="background:#90a4ae"></span>알림범위</span>
   </div>
+  </div><!-- /.ctrl-body --></details>
 </div>
 
-<div id="panel">
-  <h4 id="panelHead" role="button" tabindex="0" aria-expanded="true">📋 공사 목록 / 최근 알림 <span class="tg">▾</span></h4>
+<div id="panel" class="collapsed">
+  <h4 id="panelHead" role="button" tabindex="0" aria-expanded="false">📋 공사 목록 / 최근 알림 <span class="tg">▾</span></h4>
   <div id="list"></div>
 </div>
 
