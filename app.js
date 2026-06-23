@@ -251,7 +251,7 @@ function sendTelegram(e,dist){
     authority: e.authority,
     sourceUrl: e.sourceUrl
   };
-  fetch('/api/notify',{ method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({ event, distanceMeters: dist }) })
+  fetch('/api/notify',{ method:'POST', headers:{'content-type':'application/json; charset=utf-8'}, body:JSON.stringify({ event, distanceMeters: dist }) })
     .then(r=>r.json()).then(d=>{ if(!d.ok) console.warn('telegram notify 실패',d); })
     .catch(err=>console.warn('telegram notify 오류',err));
 }
