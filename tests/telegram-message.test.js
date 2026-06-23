@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const { buildTelegramAlertMessage } = require('../api/telegram-message');
+const { buildTelegramAlertMessage } = require('../lib/telegram-message');
 
 test('builds roadwork alert message matching warning toast content', () => {
   const message = buildTelegramAlertMessage({

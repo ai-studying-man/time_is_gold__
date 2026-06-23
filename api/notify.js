@@ -1,4 +1,4 @@
-const { buildTelegramAlertMessage } = require('./telegram-message');
+const { buildTelegramAlertMessage } = require('../lib/telegram-message');
 
 // 서버에서만 텔레그램 봇 토큰을 사용해 메시지를 전송한다(토큰은 클라이언트로 나가지 않음).
 // 환경변수 미설정 시에는 200 + {ok:false, skipped:true} 로 조용히 통과(앱 자체 알림이 대체).
