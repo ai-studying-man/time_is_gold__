@@ -1,0 +1,8 @@
+{
+  "name": "time_is_gold__",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "echo \"Static site ready\""
+  }
+}

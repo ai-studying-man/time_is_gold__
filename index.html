@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Time is Gold static site">
+    <title>Time is Gold</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --color-page: #f8f5ef;
+        --color-text: #1f2933;
+        --font-sans: Arial, Helvetica, sans-serif;
+        --text-title: clamp(2.25rem, 8vw, 5rem);
+        --text-body: 1.125rem;
+        --leading-title: 0.95;
+        --leading-body: 1.6;
+        --space-page-inline: 16px;
+        --space-title-gap: 12px;
+        --content-max: 680px;
+        --copy-max: 34rem;
+        font-family: var(--font-sans);
+        background: var(--color-page);
+        color: var(--color-text);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      main {
+        width: min(var(--content-max), calc(100% - (var(--space-page-inline) * 2)));
+      }
+
+      h1 {
+        margin: 0 0 var(--space-title-gap);
+        font-size: var(--text-title);
+        line-height: var(--leading-title);
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0;
+        max-width: var(--copy-max);
+        font-size: var(--text-body);
+        line-height: var(--leading-body);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Time is Gold</h1>
+      <p>GitHub and Vercel are ready to be connected for deployment.</p>
+    </main>
+  </body>
+</html>
