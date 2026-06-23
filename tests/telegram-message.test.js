@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 
 const { buildTelegramAlertMessage } = require('../lib/telegram-message');
 
-test('builds roadwork alert message matching warning toast content', () => {
+test('builds Telegram text from the same content shown in the app toast', () => {
   const message = buildTelegramAlertMessage({
     title: '종로3가 보도블록 정비공사 (예정)',
     eventType: '보수',
@@ -13,15 +13,18 @@ test('builds roadwork alert message matching warning toast content', () => {
     agency: '서울특별시 종로구청',
     authority: '착공신고',
     sourceUrl: 'https://example.com/notice'
-  }, 113);
+  }, 117);
 
-  assert.match(message, /⚠️ <b>보행우회 구간 진입 \(113m\)<\/b>/);
-  assert.match(message, /<b>종로3가 보도블록 정비공사 \(예정\)<\/b>/);
-  assert.match(message, /📅 <b>2026\.8\.1\. ~ 8\.20\.<\/b>/);
-  assert.match(message, /유형: 보수 · 보행우회/);
-  assert.match(message, /📍 종로/);
-  assert.match(message, /🏛 서울특별시 종로구청 · 확정도 착공신고/);
-  assert.match(message, /<a href="https:\/\/example\.com\/notice">원문 공고 확인<\/a>/);
+  assert.equal(message, [
+    '<b>⚠ 보행우회 구간 진입 (117m)</b>',
+    '',
+    '<b>종로3가 보도블록 정비공사 (예정)</b>',
+    '📅 2026.8.1. ~ 8.20.',
+    '유형: 보수 · 보행우회',
+    '📍 종로',
+    '🏛 서울특별시 종로구청 · 확정도 착공신고',
+    '🔗 <a href="https://example.com/notice">원문 공고 확인</a>'
+  ].join('\n'));
 });
 
 test('escapes HTML in user-controlled event fields', () => {
